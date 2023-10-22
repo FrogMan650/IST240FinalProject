@@ -1,0 +1,82 @@
+package finalproject;
+
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import javax.swing.*;
+import javax.swing.border.Border;
+
+public class JPanelCS extends JPanel {
+    JButton Char1, Char2, Char3;
+    JLabel CharSel,CharInfo1,Charinfo2,Charinfo3,Charinfo11,Charinfo22,Charinfo33;
+    Font font,font2;
+    Border whiteLine;
+    public JPanelCS() {
+        setLayout(null);
+        whiteLine = BorderFactory.createLineBorder(Color.WHITE,3);
+        setBorder(whiteLine);
+        setBackground(Color.BLACK);
+        font = new Font("TimesRoman",20,50);
+        font2 = new Font("TimesRoman",20,20);
+        CharSel = new JLabel("Who would you like to be?");
+        CharSel.setFont(font);
+        CharSel.setBounds(340,100,800,100);
+        CharSel.setForeground(Color.WHITE);
+        add(CharSel);
+        CharInfo1 = new JLabel("SPEED");
+        CharInfo1.setFont(font2);
+        CharInfo1.setBounds(335,280,800,100);
+        CharInfo1.setForeground(Color.WHITE);
+        add(CharInfo1);
+        Charinfo2 = new JLabel("TRANSFORMATION");
+        Charinfo2.setFont(font2);
+        Charinfo2.setBounds(535,280,800,100);
+        Charinfo2.setForeground(Color.WHITE);
+        add(Charinfo2);
+        Charinfo3 = new JLabel("SKILLED");
+        Charinfo3.setFont(font2);
+        Charinfo3.setBounds(860,280,800,100);
+        Charinfo3.setForeground(Color.WHITE);
+        add(Charinfo3);
+        Char1 = new JButton();
+        ImageIcon originalSize1 = new ImageIcon("src/pictures/Char1.png");
+        ImageIcon newSize1 = new ImageIcon(((originalSize1).getImage()).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
+        Char1.setIcon(newSize1);
+        Char1.setBounds(320,200,100,100);
+        Char1.setBackground(Color.WHITE);
+        Char1.setFocusable(false);
+        add(Char1);
+        Char2 = new JButton();
+        ImageIcon originalSize2 = new ImageIcon("src/pictures/Char2.png");
+        ImageIcon newSize2 = new ImageIcon(((originalSize2).getImage()).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
+        Char2.setIcon(newSize2);
+        Char2.setBounds(580,200,100,100);
+        Char2.setBackground(Color.WHITE);
+        Char2.setFocusable(false);
+        add(Char2);
+        Char3 = new JButton();
+        ImageIcon originalSize3 = new ImageIcon("src/pictures/Char3.png");
+        ImageIcon newSize3 = new ImageIcon(((originalSize3).getImage()).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
+        Char3.setIcon(newSize3);
+        Char3.setBounds(850,200,100,100);
+        Char3.setBackground(Color.WHITE);
+        Char3.setFocusable(false);
+        add(Char3);
+        Charinfo11 = new JLabel("<html>Your body and mind are able to perform tasks much faster than the average person.  You have higher movement speed or more time to finish the challenges.");
+        Charinfo11.setBounds(285,325,200,300);
+        Charinfo11.setFont(font2);
+        Charinfo11.setForeground(Color.WHITE);
+        add(Charinfo11);
+        Charinfo22 = new JLabel("<html>You're able to alter your cell structure to change the size of your body.  You're bigger or smaller, depending on the challenge.");
+        Charinfo22.setBounds(540,325,200,250);
+        Charinfo22.setFont(font2);
+        Charinfo22.setForeground(Color.WHITE);
+        add(Charinfo22);
+        Charinfo33 = new JLabel("<html>Through nonstop training, you have finely tuned your mind so you can alter the challenges more times than most people.  You get more uses of the special abilities in each challenge.");
+        Charinfo33.setBounds(815,325,200,325);
+        Charinfo33.setFont(font2);
+        Charinfo33.setForeground(Color.WHITE);
+        add(Charinfo33);
+}
+}

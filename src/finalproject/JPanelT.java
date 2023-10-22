@@ -1,0 +1,77 @@
+package finalproject;
+
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.*;
+import javax.swing.border.Border;
+
+public class JPanelT extends JPanel {
+    JButton Char1, Char2, Char3;
+    JLabel CharSel,CharInfo1,Charinfo2,Charinfo3,Charinfo11,Charinfo22,Charinfo33;
+    Font font,font2;
+    Border whiteLine,blackLine,pinkLine;
+    public JPanelT() {
+        setLayout(null);
+        whiteLine = BorderFactory.createLineBorder(Color.WHITE,3);
+        blackLine = BorderFactory.createLineBorder(Color.BLACK,3);
+        pinkLine = BorderFactory.createLineBorder(Color.MAGENTA,3);
+        setBorder(whiteLine);
+        setBackground(Color.BLACK);
+        font = new Font("TimesRoman",20,50);
+        font2 = new Font("TimesRoman",20,20);
+        CharSel = new JLabel("Which color theme would you like?");
+        CharSel.setFont(font);
+        CharSel.setBounds(265,100,800,100);
+        CharSel.setForeground(Color.WHITE);
+        add(CharSel);
+        CharInfo1 = new JLabel("Blue/White");
+        CharInfo1.setFont(font2);
+        CharInfo1.setBounds(320,280,800,100);
+        CharInfo1.setForeground(Color.WHITE);
+        add(CharInfo1);
+        Charinfo2 = new JLabel("Green/Pink");
+        Charinfo2.setFont(font2);
+        Charinfo2.setBounds(575,280,800,100);
+        Charinfo2.setForeground(Color.WHITE);
+        add(Charinfo2);
+        Charinfo3 = new JLabel("White/Black");
+        Charinfo3.setFont(font2);
+        Charinfo3.setBounds(850,280,800,100);
+        Charinfo3.setForeground(Color.WHITE);
+        add(Charinfo3);
+        Char1 = new JButton();
+        Char1.setBounds(320,200,100,100);
+        Char1.setBackground(Color.BLUE);
+        Char1.setBorder(whiteLine);
+        Char1.setFocusable(false);
+        add(Char1);
+        Char2 = new JButton();
+        Char2.setBounds(580,200,100,100);
+        Char2.setBackground(Color.green);
+        Char2.setBorder(pinkLine);
+        Char2.setFocusable(false);
+        add(Char2);
+        Char3 = new JButton();
+        Char3.setBounds(850,200,100,100);
+        Char3.setBackground(Color.WHITE);
+        Char3.setBorder(blackLine);
+        Char3.setFocusable(false);
+        add(Char3);
+        Charinfo11 = new JLabel("<html>Blocks in this theme will have blue backgrounds and white outlines.");
+        Charinfo11.setBounds(285,275,200,300);
+        Charinfo11.setFont(font2);
+        Charinfo11.setForeground(Color.WHITE);
+        add(Charinfo11);
+        Charinfo22 = new JLabel("<html>Blocks in this theme will have green backgrounds and pink outlines.");
+        Charinfo22.setBounds(540,300,200,250);
+        Charinfo22.setFont(font2);
+        Charinfo22.setForeground(Color.WHITE);
+        add(Charinfo22);
+        Charinfo33 = new JLabel("<html>Blocks in this theme will have white backgrounds and black outlines.");
+        Charinfo33.setBounds(815,265,200,325);
+        Charinfo33.setFont(font2);
+        Charinfo33.setForeground(Color.WHITE);
+        add(Charinfo33);
+    }
+}
