@@ -298,6 +298,7 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC2.add(mjpC2.player);
             mjpC3.playerSpeed = 10;
             mjpC4.playerSpeed = 10;
+            mjpWC.time = 70;
             getContentPane().remove(mjpCS);
             getContentPane().add(mjpT);
             validate();
@@ -312,6 +313,7 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC2.add(mjpC2.player);
             mjpC3.playerSize = 10;
             mjpC4.playerSize = 20;
+            mjpWC.playerSize = 150;
             getContentPane().remove(mjpCS);
             getContentPane().add(mjpT);
             validate();
@@ -326,6 +328,7 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC2.add(mjpC2.player);
             mjpC3.specialUses = 3;
             mjpC4.specialUses = 4;
+            mjpWC.specialUses = 3;
             getContentPane().remove(mjpCS);
             getContentPane().add(mjpT);
             validate();
@@ -383,6 +386,8 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC4.obj7.setBorder(whiteLine);
             mjpC4.obj8.setBackground(Color.BLUE);
             mjpC4.obj8.setBorder(whiteLine);
+            mjpWC.box.setBackground(Color.BLUE);
+            mjpWC.box.setBorder(whiteLine);
             getContentPane().remove(mjpT);
             getContentPane().add(mjpMap);
             validate();
@@ -440,6 +445,8 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC4.obj7.setBorder(pinkLine);
             mjpC4.obj8.setBackground(Color.green);
             mjpC4.obj8.setBorder(pinkLine);
+            mjpWC.box.setBackground(Color.green);
+            mjpWC.box.setBorder(pinkLine);
             getContentPane().remove(mjpT);
             getContentPane().add(mjpMap);
             validate();
@@ -497,6 +504,8 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC4.obj7.setBorder(blackLine);
             mjpC4.obj8.setBackground(Color.WHITE);
             mjpC4.obj8.setBorder(blackLine);
+            mjpWC.box.setBackground(Color.WHITE);
+            mjpWC.box.setBorder(blackLine);
             getContentPane().remove(mjpT);
             getContentPane().add(mjpMap);
             validate();

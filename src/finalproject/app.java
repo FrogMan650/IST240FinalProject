@@ -14,7 +14,7 @@ public class app {
 //JPanelC3 = York(dodge moving blocks)       GOOD
 //JPanelC4 = Scranton(dodge falling blocks)   GOOD
 //JPanelC5 = Altoona(portals)    BAD    (seems to be totally broken and needs theme and character choice applied))
-//JPanelWC = World Campus(click boxes)   BAD    (seems to be broken and needs theme and character choice applied)
+//JPanelWC = World Campus(click boxes)   GOOD
 //JPanelCS = Character Select   GOOD
 //JPanelSB = Scoreboard     BAD
 //JPanelSP = Score panel    GOOD

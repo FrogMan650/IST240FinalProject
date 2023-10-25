@@ -16,6 +16,11 @@ public class JPanelWC extends JPanel  implements ActionListener {
     JButton special,help,help2,Jtest,box;
     int score = 0;
     int time = 60;
+    int randomNumber;
+    int randomNumberTwo;
+    int randomNumberArray[] = new int[2];
+    int specialUses = 2;
+    int toggleArray[] = new int[2]; //0 game start,1 special toggle
     Font font;
     Timer gameTimer;
     int delay;
@@ -72,5 +77,29 @@ public class JPanelWC extends JPanel  implements ActionListener {
         if(obj == Jtest) {
             time = 2; 
             gameTimer.start(); }
+        if(obj == box && toggleArray[0] == 1) {
+            score+=1;
+            int randomTempArray[] = new int[2];
+            randomTempArray = randomNum();
+            int a = randomTempArray[0];
+            int b = randomTempArray[1];
+            box.setBounds(a,b,playerSize,playerSize); }
+        if(obj == box && toggleArray[0] == 0) {
+            toggleArray[0] = 1;
+            gameTimer.start();
+            int randomTempArray[] = new int[2];
+            randomTempArray = randomNum();
+            int a = randomTempArray[0];
+            int b = randomTempArray[1];
+            box.setBounds(a,b,playerSize,playerSize); }
+    }
+    int[] randomNum() {
+        double r = Math.random();
+        double q = Math.random();
+        randomNumber = (int)(r*(1280-playerSize-100));
+        randomNumberTwo = (int)(q*(720-playerSize-100));
+        randomNumberArray[0] = randomNumber;
+        randomNumberArray[1] = randomNumberTwo;
+        return(randomNumberArray);
     }
 }
