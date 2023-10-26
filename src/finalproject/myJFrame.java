@@ -176,8 +176,8 @@ public class myJFrame extends JFrame implements ActionListener {
         //========================================================mjpC5 buttons
         if(obj == mjpC5.help) {
              mjpI.info.setText("<html>In this game your goal is to get to the end portal.  Each portal will take you to a new room with new portals.  Each portal will be linked with one other, and they will have the same color.  To move between rooms"
-                     + " click on the portal you would like to take.  Here, your special will @@@@@@.  When you're ready to start click on any of the visible portals.");
-             mjpI.charInfo.setText("<html>Character 1 can move so quickly they get more time to finish.<br>Character 2 is so big they can see the end portal room from the start.<br>Character 3 can use the special @ times.");
+                     + " click on the portal you would like to take.  Here, your special will add 10 more seconds.  Successfully clicking the end portal grants 10 points.  When you're ready to start click on your character.");
+             mjpI.charInfo.setText("<html>Character 1 can move so quickly they get more time to finish.<br>Character 2 is so big they can see the end portal from the start.<br>Character 3 can use the special 3 times.");
              getContentPane().add(mjpI);
              mjpC5.remove(mjpC5.help);
              mjpC5.add(mjpC5.help2);

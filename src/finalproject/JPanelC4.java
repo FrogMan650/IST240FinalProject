@@ -265,6 +265,5 @@ public class JPanelC4 extends JPanel  implements ActionListener, KeyListener {
     int randomNum() {
         double r = Math.random();
         randomNumber = (int)(r*1280);
-        return(randomNumber);
-    }
+        return(randomNumber); }
 }
