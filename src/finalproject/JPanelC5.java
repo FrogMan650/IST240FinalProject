@@ -14,9 +14,11 @@ public class JPanelC5 extends JPanel  implements ActionListener {
     Image clouds = sourceImage1.getImage().getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
     Border whiteLine;
     JButton special,help,help2,Jtest,player;
-    JButton t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19,t20,t21,t22,t23,t24,t25,t26,t27,t28,t29,t30,t31,t32;
+    JButton t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19,t20,t21,t22,t23,t24,t25,t26,t27,t28,t29,t30,t31,t32; //t32 = end portal
     int score = 0;
     int time = 60;
+    int specialUses = 2;
+    int toggleArray[] = new int[50];//0 transformation
     Font font;
     Timer gameTimer;
     int delay;
@@ -52,7 +54,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
         help2.setFont(font);
         help2.setFocusable(false);
         Jtest = new JButton("Test");
-        Jtest.setBounds(1000,500,100,75);
+        Jtest.setBounds(0,0,100,75);
         Jtest.setFocusable(false);
         Jtest.addActionListener(this);
         add(Jtest);
@@ -60,6 +62,25 @@ public class JPanelC5 extends JPanel  implements ActionListener {
         player.setBounds(140,140,50,50);
         player.setFocusable(false);
         add(player);
+        
+//        t1 t30 default
+//        t2 t14 BLACK
+//        t3 t26 LIGHT_GRAY
+//        t4 t13 PINK
+//        t5 t29 WHITE
+//        t6 t9 CYAN
+//        t7 t10 DARK_GRAY
+//        t8 t19 GRAY
+//        t11 t21 MAGENTA
+//        t12 t25 RED
+//        t15 t22 GREEN
+//        t16 t18 BLUE
+//        t17 t23 pink
+//        t20 t31 ORANGE
+//        t24 t28 YELLOW
+//        t27 magenta
+//        t32 theme colors (end portal)
+        
         t1 = new JButton();
         t1.setBounds(80,77,20,20);
         t1.setFocusable(false);
@@ -153,7 +174,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
         t16.setBounds(1200,232,20,20);
         t16.setFocusable(false);
         t16.addActionListener(this);
-        t16.setBackground(Color.DARK_GRAY);
+        t16.setBackground(Color.BLUE);
         add(t16);
         t17 = new JButton();
         t17.setBounds(80,387,20,20);
@@ -256,9 +277,77 @@ public class JPanelC5 extends JPanel  implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         Object obj = ae.getSource();
         if(obj == gameTimer) {
+            if(toggleArray[0] == 1 && t32.isDisplayable()) {
+                add(t32); }
             time+=-1; }
         if(obj == Jtest) {
             time = 2; 
             gameTimer.start(); }
+        if(obj == player) {
+            gameTimer.start(); }
+        if(obj == t1) {
+            System.out.println("t1"); }
+        if(obj == t2) {
+            System.out.println("t2"); }
+        if(obj == t3) {
+            System.out.println("t3"); }
+        if(obj == t4) {
+            System.out.println("t4"); }
+        if(obj == t5) {
+            System.out.println("t5"); }
+        if(obj == t6) {
+            System.out.println("t6"); }
+        if(obj == t7) {
+            System.out.println("t7"); }
+        if(obj == t8) {
+            System.out.println("t8"); }
+        if(obj == t9) {
+            System.out.println("t9"); }
+        if(obj == t10) {
+            System.out.println("t10"); }
+        if(obj == t11) {
+            System.out.println("t11"); }
+        if(obj == t12) {
+            System.out.println("t12"); }
+        if(obj == t13) {
+            System.out.println("t13"); }
+        if(obj == t14) {
+            System.out.println("t14"); }
+        if(obj == t15) {
+            System.out.println("t15"); }
+        if(obj == t16) {
+            System.out.println("t16"); }
+        if(obj == t17) {
+            System.out.println("t17"); }
+        if(obj == t18) {
+            System.out.println("t18"); }
+        if(obj == t19) {
+            System.out.println("t19"); }
+        if(obj == t20) {
+            System.out.println("t20"); }
+        if(obj == t21) {
+            System.out.println("t21"); }
+        if(obj == t22) {
+            System.out.println("t22"); }
+        if(obj == t23) {
+            System.out.println("t23"); }
+        if(obj == t24) {
+            System.out.println("t24"); }
+        if(obj == t25) {
+            System.out.println("t25"); }
+        if(obj == t26) {
+            System.out.println("t26"); }
+        if(obj == t27) {
+            System.out.println("t27"); }
+        if(obj == t28) {
+            System.out.println("t28"); }
+        if(obj == t29) {
+            System.out.println("t29"); }
+        if(obj == t30) {
+            System.out.println("t30"); }
+        if(obj == t31) {
+            System.out.println("t31"); }
+        if(obj == t32) {
+            System.out.println("t32"); }
     }
 }

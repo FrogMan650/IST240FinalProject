@@ -298,6 +298,7 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC2.add(mjpC2.player);
             mjpC3.playerSpeed = 10;
             mjpC4.playerSpeed = 10;
+            mjpC5.time = 70;
             mjpWC.time = 70;
             getContentPane().remove(mjpCS);
             getContentPane().add(mjpT);
@@ -313,6 +314,7 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC2.add(mjpC2.player);
             mjpC3.playerSize = 10;
             mjpC4.playerSize = 20;
+            mjpC5.toggleArray[0] = 1;
             mjpWC.playerSize = 150;
             getContentPane().remove(mjpCS);
             getContentPane().add(mjpT);
@@ -328,6 +330,7 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC2.add(mjpC2.player);
             mjpC3.specialUses = 3;
             mjpC4.specialUses = 4;
+            mjpC5.specialUses = 3;
             mjpWC.specialUses = 3;
             getContentPane().remove(mjpCS);
             getContentPane().add(mjpT);
@@ -386,6 +389,10 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC4.obj7.setBorder(whiteLine);
             mjpC4.obj8.setBackground(Color.BLUE);
             mjpC4.obj8.setBorder(whiteLine);
+            mjpC5.player.setBackground(Color.BLUE);
+            mjpC5.player.setBorder(whiteLine);
+            mjpC5.t32.setBackground(Color.BLUE);
+            mjpC5.t32.setBorder(whiteLine);
             mjpWC.box.setBackground(Color.BLUE);
             mjpWC.box.setBorder(whiteLine);
             getContentPane().remove(mjpT);
@@ -447,6 +454,10 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC4.obj8.setBorder(pinkLine);
             mjpWC.box.setBackground(Color.green);
             mjpWC.box.setBorder(pinkLine);
+            mjpC5.player.setBackground(Color.green);
+            mjpC5.player.setBorder(pinkLine);
+            mjpC5.t32.setBackground(Color.green);
+            mjpC5.t32.setBorder(pinkLine);
             getContentPane().remove(mjpT);
             getContentPane().add(mjpMap);
             validate();
@@ -504,6 +515,10 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC4.obj7.setBorder(blackLine);
             mjpC4.obj8.setBackground(Color.WHITE);
             mjpC4.obj8.setBorder(blackLine);
+            mjpC5.player.setBackground(Color.WHITE);
+            mjpC5.player.setBorder(blackLine);
+            mjpC5.t32.setBackground(Color.WHITE);
+            mjpC5.t32.setBorder(blackLine);
             mjpWC.box.setBackground(Color.WHITE);
             mjpWC.box.setBorder(blackLine);
             getContentPane().remove(mjpT);
