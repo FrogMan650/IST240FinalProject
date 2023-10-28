@@ -15,6 +15,7 @@ public class mapJPanel extends JPanel implements KeyListener{
     JButton wc = new JButton("World Campus");
     JButton player = new JButton("ME");
     JButton altoona = new JButton("Altoona");
+    JButton test = new JButton("test");
     JLabel TotalTime,TotalScore;
     int playerx = 200;
     int playery = 200;
@@ -36,6 +37,8 @@ public class mapJPanel extends JPanel implements KeyListener{
         add(TotalScore);
         blackLine = BorderFactory.createLineBorder(Color.BLACK,3);
         setBorder(blackLine);
+        test.setBounds(1000,600,100,50);
+        add(test);
         up.setBounds(new Rectangle(560,350,50,50));
         up.setBackground(Color.WHITE);
         up.setForeground(Color.BLUE);

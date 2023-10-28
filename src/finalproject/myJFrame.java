@@ -99,6 +99,7 @@ public class myJFrame extends JFrame implements ActionListener {
                 mjpC5.help2.addActionListener(this);
                 mjpWC.help.addActionListener(this);
                 mjpWC.help2.addActionListener(this);
+                mjpMap.test.addActionListener(this);
                 //========================================================
                 checkTimer.start();
 }
@@ -532,6 +533,22 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().add(mjpCS);
                 validate();
                 repaint(); }
+        if(obj == mjpMap.test) {
+            getContentPane().remove(mjpMap);
+            getContentPane().add(mjpSB);
+            mjpSB.finalTime.setBounds(650,200,500,100);
+            mjpSB.finalTime.setText("Total Time: "+totalTime);
+            mjpSB.add(mjpSB.finalTime);
+            mjpSB.finalScore.setBounds(250,200,500,100);
+            mjpSB.finalScore.setText("Total Score: "+totalScore);
+            mjpSB.add(mjpSB.finalScore);
+            mjpSB.gameOver.setBounds(300,00,600,200);
+            mjpSB.gameOver.setText("GAME OVER");
+            mjpSB.add(mjpSB.gameOver);
+            repaint();
+            mjpSB.totalTime = totalTime;
+            mjpSB.totalScore = totalScore;
+        }
         if(obj == checkTimer) {
             mjpSP.repaint();
             mjpI.repaint();
@@ -558,7 +575,7 @@ public class myJFrame extends JFrame implements ActionListener {
             if(toggleArray[11]==1 && mjpWC.done==1) {
                 mjpSP.currentScore.setText("Score: "+mjpWC.score);
                 mjpSP.currentTime.setText("Time: "+mjpWC.time); }
-            //================================================================Campus game end triggers andf scores
+            //================================================================Campus game end triggers and scores
             if(mjpC1.time==0 && toggleArray[12]==0) {
                 toggleArray[12]=1;
                 mjpC1.gameTimer.stop();
@@ -636,6 +653,8 @@ public class myJFrame extends JFrame implements ActionListener {
                 gameTimer.stop();
                 getContentPane().remove(mjpMap);
                 getContentPane().add(mjpSB);
+                mjpSB.totalTime = totalTime;
+                mjpSB.totalScore = totalScore;
             try {
                 xe = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("info.xml"))); } 
             catch (Exception xx) {
