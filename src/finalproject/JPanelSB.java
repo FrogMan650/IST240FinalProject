@@ -7,9 +7,11 @@ public class JPanelSB extends JPanel {
     JButton test = new JButton("TEST");
     int totalTime;
     int totalScore;
-    JLabel finalTime = new JLabel("final time:");
-    JLabel finalScore = new JLabel("final score:");
-    JLabel gameOver = new JLabel("GAME OVER");
+    JLabel finalTime = new JLabel("");
+    JLabel finalScore = new JLabel("");
+    JLabel gameOver = new JLabel("");
+    JLabel bestTime = new JLabel("");
+    JLabel bestScore = new JLabel("");
     Font font = new Font("TimesRoman",30,40);
     Font fontTwo = new Font("TimesRoman",60,90);
     public JPanelSB() {
@@ -25,5 +27,9 @@ public class JPanelSB extends JPanel {
         finalScore.setForeground(Color.BLUE);
         gameOver.setFont(fontTwo);
         gameOver.setForeground(Color.WHITE);
+        bestTime.setFont(font);
+        bestTime.setForeground(Color.BLUE);
+        bestScore.setFont(font);
+        bestScore.setForeground(Color.BLUE);
     }
 }

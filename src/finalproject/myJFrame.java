@@ -6,8 +6,18 @@ import java.awt.event.ActionListener;
 import java.beans.XMLEncoder;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 public class myJFrame extends JFrame implements ActionListener {
     	mapJPanel mjpMap;
@@ -28,6 +38,8 @@ public class myJFrame extends JFrame implements ActionListener {
         Border whiteLine,blackLine,pinkLine;
         int delay,delay2,totalTime,totalScore;
         int toggleArray[] = new int[50]; //0-5 map button toggles,6-11 mjpSP currentTime & currentScore updaters, 12-17 game close toggles,18 Game end
+        int overallBestTime;
+        int overallBestScore;
 	public myJFrame () {
 		super ("PENN STATE CAMPUS GAME");
                 setLayout(null);
@@ -534,18 +546,59 @@ public class myJFrame extends JFrame implements ActionListener {
                 validate();
                 repaint(); }
         if(obj == mjpMap.test) {
-            getContentPane().remove(mjpMap);
-            getContentPane().add(mjpSB);
-            mjpSB.finalTime.setBounds(650,200,500,100);
-            mjpSB.finalTime.setText("Total Time: "+totalTime);
-            mjpSB.add(mjpSB.finalTime);
-            mjpSB.finalScore.setBounds(250,200,500,100);
-            mjpSB.finalScore.setText("Total Score: "+totalScore);
-            mjpSB.add(mjpSB.finalScore);
-            mjpSB.gameOver.setBounds(300,00,600,200);
-            mjpSB.gameOver.setText("GAME OVER");
-            mjpSB.add(mjpSB.gameOver);
-            repaint();
+            gameTimer.stop();
+                getContentPane().remove(mjpMap);
+                getContentPane().add(mjpSB);
+                
+                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                try {
+                    DocumentBuilder builder = factory.newDocumentBuilder();
+                    Document doc = builder.parse("info.xml");
+                    NodeList bestStats = doc.getElementsByTagName("int");
+                    int xmlBestTime = Integer.parseInt(bestStats.item(0).getTextContent());
+                    int xmlBestScore = Integer.parseInt(bestStats.item(1).getTextContent());
+                    if(xmlBestTime > totalTime) {
+                        overallBestTime = totalTime; }
+                    else { overallBestTime = xmlBestTime; }
+                    if(xmlBestScore < totalScore) { overallBestScore = totalScore; }
+                    else { overallBestScore = xmlBestScore; } 
+                } 
+                catch (ParserConfigurationException ex) {
+                    Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); } 
+                catch (SAXException ex) {
+                        Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); } 
+                catch (IOException ex) {
+                        Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); }
+                try {
+                    xe = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("info.xml"))); } 
+                catch (Exception xx) {
+                    xx.printStackTrace(); }
+                try {
+                    xe.writeObject(overallBestTime);
+                    xe.writeObject(overallBestScore); } 
+                catch (Exception xx) {
+                    xx.printStackTrace(); }
+                try {
+                    xe.close(); } 
+                catch (Exception xx) {
+                    xx.printStackTrace(); }
+                toggleArray[18]=1; 
+                mjpSB.finalTime.setBounds(650,200,500,100);
+                mjpSB.finalTime.setText("Total Time: "+totalTime);
+                mjpSB.add(mjpSB.finalTime);
+                mjpSB.finalScore.setBounds(250,200,500,100);
+                mjpSB.finalScore.setText("Total Score: "+totalScore);
+                mjpSB.add(mjpSB.finalScore);
+                mjpSB.gameOver.setBounds(300,00,600,200);
+                mjpSB.gameOver.setText("GAME OVER");
+                mjpSB.add(mjpSB.gameOver);
+                mjpSB.bestScore.setBounds(250,400,500,100);
+                mjpSB.bestScore.setText(Integer.toString(overallBestScore));
+                mjpSB.add(mjpSB.bestScore);
+                mjpSB.bestTime.setBounds(650,400,500,100);
+                mjpSB.bestTime.setText(Integer.toString(overallBestTime));
+                mjpSB.add(mjpSB.bestTime);
+                repaint();
         }
         if(obj == checkTimer) {
             mjpSP.repaint();
@@ -651,6 +704,40 @@ public class myJFrame extends JFrame implements ActionListener {
                 gameTimer.stop();
                 getContentPane().remove(mjpMap);
                 getContentPane().add(mjpSB);
+                
+                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                try {
+                    DocumentBuilder builder = factory.newDocumentBuilder();
+                    Document doc = builder.parse("info.xml");
+                    NodeList bestStats = doc.getElementsByTagName("int");
+                    int xmlBestTime = Integer.parseInt(bestStats.item(0).getTextContent());
+                    int xmlBestScore = Integer.parseInt(bestStats.item(1).getTextContent());
+                    if(xmlBestTime > totalTime) {
+                        overallBestTime = totalTime; }
+                    else { overallBestTime = xmlBestTime; }
+                    if(xmlBestScore < totalScore) { overallBestScore = totalScore; }
+                    else { overallBestScore = xmlBestScore; } 
+                } 
+                catch (ParserConfigurationException ex) {
+                    Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); } 
+                catch (SAXException ex) {
+                        Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); } 
+                catch (IOException ex) {
+                        Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); }
+                try {
+                    xe = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("info.xml"))); } 
+                catch (Exception xx) {
+                    xx.printStackTrace(); }
+                try {
+                    xe.writeObject(overallBestTime);
+                    xe.writeObject(overallBestScore); } 
+                catch (Exception xx) {
+                    xx.printStackTrace(); }
+                try {
+                    xe.close(); } 
+                catch (Exception xx) {
+                    xx.printStackTrace(); }
+                toggleArray[18]=1;
                 mjpSB.finalTime.setBounds(650,200,500,100);
                 mjpSB.finalTime.setText("Total Time: "+totalTime);
                 mjpSB.add(mjpSB.finalTime);
@@ -660,21 +747,15 @@ public class myJFrame extends JFrame implements ActionListener {
                 mjpSB.gameOver.setBounds(300,00,600,200);
                 mjpSB.gameOver.setText("GAME OVER");
                 mjpSB.add(mjpSB.gameOver);
+                mjpSB.bestScore.setBounds(250,400,500,100);
+                mjpSB.bestScore.setText("Best Score: "+Integer.toString(overallBestScore));
+                mjpSB.add(mjpSB.bestScore);
+                mjpSB.bestTime.setBounds(650,400,500,100);
+                mjpSB.bestTime.setText("Best Time: "+Integer.toString(overallBestTime));
+                mjpSB.add(mjpSB.bestTime);
                 repaint();
-//            try {
-//                xe = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("info.xml"))); } 
-//            catch (Exception xx) {
-//                xx.printStackTrace(); }
-//            try {
-//                xe.writeObject(totalTime);
-//                xe.writeObject(totalScore); } 
-//            catch (Exception xx) {
-//                xx.printStackTrace(); }
-//            try {
-//                xe.close(); } 
-//            catch (Exception xx) {
-//                xx.printStackTrace(); }
-//                toggleArray[18]=1; 
+                    
+                
             }
         }
     }
