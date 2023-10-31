@@ -20,7 +20,8 @@ public class JPanelC3 extends JPanel  implements ActionListener, KeyListener {
     int score = 0;
     int time = 60;
     Font font;
-    Timer gameTimer,buttonTimer;
+    Timer gameTimer,buttonTimer,specialTimer;
+    int specialPause;
     int delay,delay2;
     int done = 0;
     int playerSize = 25;
@@ -42,6 +43,7 @@ public class JPanelC3 extends JPanel  implements ActionListener, KeyListener {
         delay2 = 20;
         gameTimer = new Timer(delay, this);
         buttonTimer = new Timer(delay2, this);
+        specialTimer = new Timer(delay, this);
         font = new Font("TimesRoman",20,50);
         whiteLine = BorderFactory.createLineBorder(Color.WHITE,3);
         setBackground(Color.BLUE);
@@ -53,6 +55,8 @@ public class JPanelC3 extends JPanel  implements ActionListener, KeyListener {
         special.setForeground(Color.WHITE);
         special.setFont(font);
         special.setFocusable(false);
+        special.addActionListener(this);
+        special.setText(""+specialUses);
         add(special);
         help = new JButton("?");
         help.setBounds(1180,620,100,100);
@@ -125,6 +129,18 @@ public class JPanelC3 extends JPanel  implements ActionListener, KeyListener {
         Object obj = ae.getSource();
         if(obj == gameTimer) {
             time+=-1; }
+        if(obj == special) {
+            if(specialUses > 0) {
+                specialUses-=1;
+                buttonTimer.stop();
+                specialTimer.start(); 
+                special.setText(""+specialUses); } }
+        if(obj == specialTimer && specialPause == 4) {
+            specialTimer.stop();
+            specialPause = 0;
+            buttonTimer.start(); }
+        if(obj == specialTimer) {
+            specialPause+=1; }
         if(obj == buttonTimer) {
             boxy = boxy+y;
             boxy2 = boxy2+y2;

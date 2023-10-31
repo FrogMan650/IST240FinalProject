@@ -43,6 +43,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
         special.setFont(font);
         special.setFocusable(false);
         special.addActionListener(this);
+        special.setText(""+specialUses);
         add(special);
         help = new JButton("?");
         help.setBounds(1180,620,100,100);

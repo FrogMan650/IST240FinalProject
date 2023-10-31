@@ -122,10 +122,10 @@ public class myJFrame extends JFrame implements ActionListener {
         //========================================================mjpC1 buttons
         if(obj == mjpC1.help) {
              mjpI.info.setText("<html>In this game you bounce the button around the screen and try to hit the blocks in the middle as many times as you can.  If the button hits the bottom of the screen you lose one point.  "
-                     + "Move your character left and right with the arrow keys.  Here, the special button reverses the movement of the button (two uses).  "
+                     + "Move your character left and right with the arrow keys.  Here, the special ability reverses the movement of the button.  "
                      + "When you're ready to start, move the button where you'd like to start and click on the orange button.  The button will start moving up and right."
                      + "You'll have one minute to get as many points as possible.");
-             mjpI.charInfo.setText("<html>Character 1 can move their character twice as fast.<br>Character 2 is bigger, making it easier to hit the box.<br>Character 3 gets 5 uses of the special.");
+             mjpI.charInfo.setText("<html>Character 1 can move their character twice as fast.<br>Character 2 is bigger, making it easier to hit the box.<br>Character 3 gets 5 uses of the special ability.");
              getContentPane().add(mjpI);
              mjpC1.remove(mjpC1.help);
              mjpC1.add(mjpC1.help2);
@@ -140,9 +140,9 @@ public class myJFrame extends JFrame implements ActionListener {
         //========================================================mjpC2 buttons
         if(obj == mjpC2.help) {
              mjpI.info.setText("<html>In this game your goal is to hit the orange button into the others that appear around the screen.  Move your character with the arrow keys.  "
-                     + "Here, the special button will pause the movement of the button for 2 seconds (two uses).  When you're ready to start, move your character where you'd like to start and click on the orange button.  The button will start moving up and right.  "
+                     + "Here, the special ability will pause the movement of the button for 2 seconds.  When you're ready to start, move your character where you'd like to start and click on the orange button.  The button will start moving up and right.  "
                      + "You get one point for each block you hit and you'll have one minute to get as many points as you can.");
-             mjpI.charInfo.setText("<html>Character 1 can move around faster.<br>Character 2 is a bit bigger, making it easier to hit the box.<br>Character 3 gets 5 uses of the special.");
+             mjpI.charInfo.setText("<html>Character 1 can move around faster.<br>Character 2 is a bit bigger, making it easier to hit the box.<br>Character 3 gets 5 uses of the special ability.");
              getContentPane().add(mjpI);
              mjpC2.remove(mjpC2.help);
              mjpC2.add(mjpC2.help2);
@@ -157,8 +157,8 @@ public class myJFrame extends JFrame implements ActionListener {
         //========================================================mjpC3 buttons
         if(obj == mjpC3.help) {
              mjpI.info.setText("<html>In this game the goal is to get to the right side of the screen without hitting any of the boxes.  If you do hit them you get put back right before that column of boxes.  Use the arrow keys to move your character."
-                     + "  Each time you can get to the right side you get one point.  Here, your special lets you slow down the boxes for five seconds, making it easier to pass them (two uses).  When you're ready, click your character to start.");
-             mjpI.charInfo.setText("<html>Character 1 can move faster.<br>Character 2 is a bit smaller.<br>Character 3 can use the special 5 times.");
+                     + "  Each time you can get to the right side you get one point.  Here, your special ability lets you slow down the boxes for five seconds, making it easier to pass them (two uses).  When you're ready, click your character to start.");
+             mjpI.charInfo.setText("<html>Character 1 can move faster.<br>Character 2 is a bit smaller.<br>Character 3 can use the special ability 5 times.");
              getContentPane().add(mjpI);
              mjpC3.remove(mjpC3.help);
              mjpC3.add(mjpC3.help2);
@@ -173,8 +173,8 @@ public class myJFrame extends JFrame implements ActionListener {
         //========================================================mjpC4 buttons
         if(obj == mjpC4.help) {
              mjpI.info.setText("<html>In this game you need to dodge the objects falling from the top of the screen.  Move your character left and right with the arrow keys.  There is no way to gain points, but if you can make it to the end without getting hit you'll"
-                     + " get ten points.  Each time you get hit, you lose one point.  Here, the special makes you invincible for 5 seconds (two uses).  When you're ready to start click on your character.");
-             mjpI.charInfo.setText("<html>Character 1 gets to move faster.<br>Character 2 is smaller.<br>Character 3 can use the special 5 times.");
+                     + " get ten points.  Each time you get hit, you lose one point.  Here, the special ability makes you invincible for 5 seconds.  When you're ready to start click on your character.");
+             mjpI.charInfo.setText("<html>Character 1 gets to move faster.<br>Character 2 is smaller.<br>Character 3 can use the special ability 5 times.");
              getContentPane().add(mjpI);
              mjpC4.remove(mjpC4.help);
              mjpC4.add(mjpC4.help2);
@@ -188,9 +188,10 @@ public class myJFrame extends JFrame implements ActionListener {
              repaint(); }
         //========================================================mjpC5 buttons
         if(obj == mjpC5.help) {
-             mjpI.info.setText("<html>In this game your goal is to get to the end portal.  Each portal will take you to a new room with new portals.  Each portal will be linked with one other, and they will have the same color.  To move between rooms"
-                     + " click on the portal you would like to take.  Here, your special will add 10 more seconds.  Successfully clicking the end portal grants 10 points.  When you're ready to start click on your character.");
-             mjpI.charInfo.setText("<html>Character 1 can move so quickly they get more time to finish.<br>Character 2 is so big they can see the end portal from the start.<br>Character 3 can use the special 3 times.");
+             mjpI.info.setText("<html>In this game your goal is to get to the end portal, which is the same color as your character.  Each portal will take you to a new room with new portals.  Each portal will be linked with one other, "
+                     + "and they will have the same color.  To move between rooms click on the portal you would like to take.  Here, your special ability will add 10 more seconds.  Successfully clicking the end portal grants 10 points.  "
+                     + "When you're ready to start click on your character.");
+             mjpI.charInfo.setText("<html>Character 1 can move so quickly they get more time to finish.<br>Character 2 is so big they can see the end portal from the start.<br>Character 3 can use the special ability 3 times.");
              getContentPane().add(mjpI);
              mjpC5.remove(mjpC5.help);
              mjpC5.add(mjpC5.help2);
@@ -204,8 +205,8 @@ public class myJFrame extends JFrame implements ActionListener {
              repaint(); }
         //========================================================mjpWC buttons
         if(obj == mjpWC.help) {
-             mjpI.info.setText("<html>In this game your goal is to click as many boxes as possible.  Boxes will appear randomly around the screen and you'll get one point per box clicked.  Here, your special pauses the game timer for 5 seconds allowing you to click "
-                     + "more boxes (one use).");
+             mjpI.info.setText("<html>In this game your goal is to click as many boxes as possible.  Boxes will appear randomly around the screen and you'll get one point per box clicked.  Here, your special ability adds 5 seconds allowing you to click "
+                     + "more boxes.");
              mjpI.charInfo.setText("<html>Character 1 moves so quickly they get more time to play the game.<br>Character 2 makes themselves smaller, so the boxes appear to be bigger.<br>Character 3 can use the special 3 times.");
              getContentPane().add(mjpI);
              mjpWC.remove(mjpWC.help);
@@ -593,10 +594,10 @@ public class myJFrame extends JFrame implements ActionListener {
                 mjpSB.gameOver.setText("GAME OVER");
                 mjpSB.add(mjpSB.gameOver);
                 mjpSB.bestScore.setBounds(250,400,500,100);
-                mjpSB.bestScore.setText(Integer.toString(overallBestScore));
+                mjpSB.bestScore.setText("Best Score: "+Integer.toString(overallBestScore));
                 mjpSB.add(mjpSB.bestScore);
                 mjpSB.bestTime.setBounds(650,400,500,100);
-                mjpSB.bestTime.setText(Integer.toString(overallBestTime));
+                mjpSB.bestTime.setText("Best Time: "+Integer.toString(overallBestTime));
                 mjpSB.add(mjpSB.bestTime);
                 repaint();
         }

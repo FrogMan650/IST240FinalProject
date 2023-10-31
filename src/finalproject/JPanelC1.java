@@ -48,6 +48,7 @@ public class JPanelC1 extends JPanel implements ActionListener, KeyListener {
         special.setForeground(Color.WHITE);
         special.setFont(font);
         special.setFocusable(false);
+        special.setText(""+specialUses);
         add(special);
         special.addActionListener(this);
         help = new JButton("?");

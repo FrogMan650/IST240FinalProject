@@ -42,6 +42,7 @@ public class JPanelWC extends JPanel  implements ActionListener {
         special.setForeground(Color.WHITE);
         special.setFont(font);
         special.setFocusable(false);
+        special.setText(""+specialUses);
         add(special);
         help = new JButton("?");
         help.setBounds(1180,620,100,100);
@@ -77,6 +78,11 @@ public class JPanelWC extends JPanel  implements ActionListener {
         if(obj == Jtest) {
             time = 2; 
             gameTimer.start(); }
+        if(obj == special) {
+            if(specialUses > 0) {
+                specialUses -= 1;
+                time += 5; } 
+            special.setText(""+specialUses); }
         if(obj == box && toggleArray[0] == 1) {
             score+=1;
             int randomTempArray[] = new int[2];

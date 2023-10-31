@@ -54,6 +54,7 @@ public class JPanelC4 extends JPanel  implements ActionListener, KeyListener {
         special.setFont(font);
         special.setFocusable(false);
         special.addActionListener(this);
+        special.setText(""+specialUses);
         add(special);
         help = new JButton("?");
         help.setBounds(1180,620,100,100);
