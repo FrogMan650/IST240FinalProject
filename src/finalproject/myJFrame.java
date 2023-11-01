@@ -37,7 +37,10 @@ public class myJFrame extends JFrame implements ActionListener {
         Timer gameTimer,checkTimer;
         Border whiteLine,blackLine,pinkLine;
         int delay,delay2,totalTime,totalScore;
-        int toggleArray[] = new int[50]; //0-5 map button toggles,6-11 mjpSP currentTime & currentScore updaters, 12-17 game close toggles,18 Game end
+        int toggleArray[] = new int[50]; //0-5 map button toggles
+                                         //6-11 mjpSP currentTime & currentScore updaters 
+                                         //12-17 game close toggles
+                                         //18 Game end
         int overallBestTime;
         int overallBestScore;
 	public myJFrame () {
@@ -85,7 +88,7 @@ public class myJFrame extends JFrame implements ActionListener {
                 delay2 = 10; //milliseconds
   		gameTimer = new Timer(delay, this);
                 checkTimer = new Timer(delay2, this);
-                //========================================================listeners
+                //==================================================listeners
                 mjpCS.Char1.addActionListener(this);
                 mjpCS.Char2.addActionListener(this);
                 mjpCS.Char3.addActionListener(this);
@@ -93,12 +96,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 mjpT.Char2.addActionListener(this);
                 mjpT.Char3.addActionListener(this);
                 mjpD.go.addActionListener(this);
-                mjpC1.special.addActionListener(this);
-                mjpC2.special.addActionListener(this);
-                mjpC3.special.addActionListener(this);
-                mjpC4.special.addActionListener(this);
-                mjpC5.special.addActionListener(this);
-                mjpWC.special.addActionListener(this);
                 mjpC1.help.addActionListener(this);
                 mjpC1.help2.addActionListener(this);
                 mjpC2.help.addActionListener(this);
@@ -121,11 +118,17 @@ public class myJFrame extends JFrame implements ActionListener {
         Object obj = ae.getSource();
         //========================================================mjpC1 buttons
         if(obj == mjpC1.help) {
-             mjpI.info.setText("<html>In this game you bounce the button around the screen and try to hit the blocks in the middle as many times as you can.  If the button hits the bottom of the screen you lose one point.  "
-                     + "Move your character left and right with the arrow keys.  Here, the special ability reverses the movement of the button.  "
-                     + "When you're ready to start, move the button where you'd like to start and click on the orange button.  The button will start moving up and right."
+             mjpI.info.setText("<html>Game instructions<br>"
+                     + "Bounce the orange button around the screen and try to hit the blocks in the middle as many times as you can.<br>"
+                     + "You get one point each time you hit a block and lose a point if the button hits the bottom of the screen.<br>"
+                     + "Move your character left and right with the arrow keys.<br>  "
+                     + "The special ability instantly reverses the movement of the button. (2 uses)<br>"
+                     + "When you're ready to start, move the button where you'd like to start and click on the orange button.<br>"
+                     + "The button will start moving up and right.<br>"
                      + "You'll have one minute to get as many points as possible.");
-             mjpI.charInfo.setText("<html>Character 1 can move their character twice as fast.<br>Character 2 is bigger, making it easier to hit the box.<br>Character 3 gets 5 uses of the special ability.");
+             mjpI.charInfo.setText("<html>Character 1 can move their character twice as fast.<br>"
+                     + "Character 2 is bigger, making it easier to hit the box.<br>"
+                     + "Character 3 gets 5 uses of the special ability.");
              getContentPane().add(mjpI);
              mjpC1.remove(mjpC1.help);
              mjpC1.add(mjpC1.help2);
@@ -139,10 +142,17 @@ public class myJFrame extends JFrame implements ActionListener {
              repaint(); }
         //========================================================mjpC2 buttons
         if(obj == mjpC2.help) {
-             mjpI.info.setText("<html>In this game your goal is to hit the orange button into the others that appear around the screen.  Move your character with the arrow keys.  "
-                     + "Here, the special ability will pause the movement of the button for 2 seconds.  When you're ready to start, move your character where you'd like to start and click on the orange button.  The button will start moving up and right.  "
-                     + "You get one point for each block you hit and you'll have one minute to get as many points as you can.");
-             mjpI.charInfo.setText("<html>Character 1 can move around faster.<br>Character 2 is a bit bigger, making it easier to hit the box.<br>Character 3 gets 5 uses of the special ability.");
+             mjpI.info.setText("<html>Game instructions<br>"
+                     + "Hit the orange button into the others that appear around the screen.<br>"
+                     + "You get one point for each block you hit with the orange button<br>"
+                     + "Move your character with the arrow keys.<br>"
+                     + "The special ability will pause the movement of the button for 2 seconds. (2 uses)<br>"
+                     + "When you're ready to start, move your character where you'd like to start and click on the orange button.<br>"
+                     + "The button will start moving up and right.<br>"
+                     + "You'll have one minute to get as many points as you can.");
+             mjpI.charInfo.setText("<html>Character 1 moves faster.<br>"
+                     + "Character 2 is bigger, making it easier to hit the button.<br>"
+                     + "Character 3 gets 5 uses of the special ability.");
              getContentPane().add(mjpI);
              mjpC2.remove(mjpC2.help);
              mjpC2.add(mjpC2.help2);
@@ -156,9 +166,16 @@ public class myJFrame extends JFrame implements ActionListener {
              repaint(); }
         //========================================================mjpC3 buttons
         if(obj == mjpC3.help) {
-             mjpI.info.setText("<html>In this game the goal is to get to the right side of the screen without hitting any of the boxes.  If you do hit them you get put back right before that column of boxes.  Use the arrow keys to move your character."
-                     + "  Each time you can get to the right side you get one point.  Here, your special ability lets you slow down the boxes for five seconds, making it easier to pass them (two uses).  When you're ready, click your character to start.");
-             mjpI.charInfo.setText("<html>Character 1 can move faster.<br>Character 2 is a bit smaller.<br>Character 3 can use the special ability 5 times.");
+             mjpI.info.setText("<html>Game instructions<br>"
+                     + "Get to the right side of the screen without hitting any of the boxes.<br>"
+                     + "If you do hit them you get put back right before that column of boxes.<br>"
+                     + "Each time you can get to the right side you get one point.<br>"
+                     + "Use the arrow keys to move your character.<br>"
+                     + "The special ability lets you stop the boxes for five seconds. (two uses)<br>"
+                     + "When you're ready, click your character to start.");
+             mjpI.charInfo.setText("<html>Character 1 can move faster.<br>"
+                     + "Character 2 is smaller.<br>"
+                     + "Character 3 can use the special ability 5 times.");
              getContentPane().add(mjpI);
              mjpC3.remove(mjpC3.help);
              mjpC3.add(mjpC3.help2);
@@ -172,9 +189,15 @@ public class myJFrame extends JFrame implements ActionListener {
              repaint(); }
         //========================================================mjpC4 buttons
         if(obj == mjpC4.help) {
-             mjpI.info.setText("<html>In this game you need to dodge the objects falling from the top of the screen.  Move your character left and right with the arrow keys.  There is no way to gain points, but if you can make it to the end without getting hit you'll"
-                     + " get ten points.  Each time you get hit, you lose one point.  Here, the special ability makes you invincible for 5 seconds.  When you're ready to start click on your character.");
-             mjpI.charInfo.setText("<html>Character 1 gets to move faster.<br>Character 2 is smaller.<br>Character 3 can use the special ability 5 times.");
+             mjpI.info.setText("<html>Game instructions<br>"
+                     + "Dodge the objects falling from the top of the screen.<br>"
+                     + "Make it to the end without getting hit you'll get ten points, but each time you get hit, you lose one point.<br>"
+                     + "Move your character left and right with the arrow keys.<br>"
+                     + "The special ability makes you invincible for 5 seconds. (2 uses)<br>"
+                     + "When you're ready to start click on your character.");
+             mjpI.charInfo.setText("<html>Character 1 moves faster.<br>"
+                     + "Character 2 is smaller.<br>"
+                     + "Character 3 can use the special ability 5 times.");
              getContentPane().add(mjpI);
              mjpC4.remove(mjpC4.help);
              mjpC4.add(mjpC4.help2);
@@ -188,10 +211,16 @@ public class myJFrame extends JFrame implements ActionListener {
              repaint(); }
         //========================================================mjpC5 buttons
         if(obj == mjpC5.help) {
-             mjpI.info.setText("<html>In this game your goal is to get to the end portal, which is the same color as your character.  Each portal will take you to a new room with new portals.  Each portal will be linked with one other, "
-                     + "and they will have the same color.  To move between rooms click on the portal you would like to take.  Here, your special ability will add 10 more seconds.  Successfully clicking the end portal grants 10 points.  "
+             mjpI.info.setText("<html>Game instructions<br>"
+                     + "Once the game starts you'll see 4 portals around your character.<br>"
+                     + "Click one to take that portal to a different room, which will also have 4 portals.<br>"
+                     + "Navigate this labyrinth of portals to find the end portal, which is colored the same as your character.<br>"
+                     + "Clicking the end portal grants 10 points and ends the game.<br>"
+                     + "The special ability will add 10 more seconds. (1 use)<br>"
                      + "When you're ready to start click on your character.");
-             mjpI.charInfo.setText("<html>Character 1 can move so quickly they get more time to finish.<br>Character 2 is so big they can see the end portal from the start.<br>Character 3 can use the special ability 3 times.");
+             mjpI.charInfo.setText("<html>Character 1 gets 10 extra seconds to finish.<br>"
+                     + "Character 2 can see the end portal from the start.<br>"
+                     + "Character 3 can use the special ability 3 times.");
              getContentPane().add(mjpI);
              mjpC5.remove(mjpC5.help);
              mjpC5.add(mjpC5.help2);
@@ -205,9 +234,13 @@ public class myJFrame extends JFrame implements ActionListener {
              repaint(); }
         //========================================================mjpWC buttons
         if(obj == mjpWC.help) {
-             mjpI.info.setText("<html>In this game your goal is to click as many boxes as possible.  Boxes will appear randomly around the screen and you'll get one point per box clicked.  Here, your special ability adds 5 seconds allowing you to click "
-                     + "more boxes.");
-             mjpI.charInfo.setText("<html>Character 1 moves so quickly they get more time to play the game.<br>Character 2 makes themselves smaller, so the boxes appear to be bigger.<br>Character 3 can use the special 3 times.");
+             mjpI.info.setText("<html>Game instructions<br>"
+                     + "Click as many boxes as possible.<br>"
+                     + "Boxes will appear randomly around the screen and you'll get one point per box clicked.<br>"
+                     + "The special ability adds 5 seconds allowing you to click more boxes.");
+             mjpI.charInfo.setText("<html>Character 1 gets 5 extra seconds to play.<br>"
+                     + "Character 2 the boxes are bigger.<br>"
+                     + "Character 3 can use the special 3 times.");
              getContentPane().add(mjpI);
              mjpWC.remove(mjpWC.help);
              mjpWC.add(mjpWC.help2);
@@ -225,8 +258,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 toggleArray[6]=1;
                 mjpMap.up.setEnabled(false);
                 mjpC1.done=1;
-                //mjpSP.currentScore.setText("Score: "+mjpC1.score);
-                //mjpSP.currentTime.setText("Time: "+mjpC1.time);
                 getContentPane().remove(mjpMap);
                 getContentPane().add(mjpSP);
                 getContentPane().add(mjpC1);
@@ -238,8 +269,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 toggleArray[7]=1;
                 mjpMap.erie.setEnabled(false);
                 mjpC2.done=1;
-                //mjpSP.currentScore.setText("Score: "+mjpC2.score);
-                //mjpSP.currentTime.setText("Time: "+mjpC2.time);
                 getContentPane().remove(mjpMap);
                 getContentPane().add(mjpC2);
                 getContentPane().add(mjpSP);
@@ -251,9 +280,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 toggleArray[8]=1;
                 mjpMap.york.setEnabled(false);
                 mjpC3.done=1;
-                //mjpSP.currentScore.setText("Score: "+mjpC3.score);
-                //mjpSP.currentTime.setText("Time: "+mjpC4.time);
-                getContentPane().remove(mjpMap);
                 getContentPane().add(mjpSP);
                 getContentPane().add(mjpC3);
                 mjpC3.requestFocusInWindow();
@@ -264,8 +290,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 toggleArray[9]=1;
                 mjpMap.scranton.setEnabled(false);
                 mjpC4.done=1;
-                //mjpSP.currentScore.setText("Score: "+mjpC4.score);
-                //mjpSP.currentTime.setText("Time: "+mjpC4.time);
                 getContentPane().remove(mjpMap);
                 getContentPane().add(mjpSP);
                 getContentPane().add(mjpC4);
@@ -277,8 +301,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 toggleArray[10]=1;
                 mjpMap.altoona.setEnabled(false);
                 mjpC5.done=1;
-                //mjpSP.currentScore.setText("Score: "+mjpC5.score);
-                //mjpSP.currentTime.setText("Time: "+mjpC5.time);
                 getContentPane().remove(mjpMap);
                 getContentPane().add(mjpSP);
                 getContentPane().add(mjpC5);
@@ -290,8 +312,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 toggleArray[11]=1;
                 mjpMap.wc.setEnabled(false);
                 mjpWC.done=1;
-                //mjpSP.currentScore.setText("Score: "+mjpWC.score);
-                //mjpSP.currentTime.setText("Time: "+mjpWC.time);
                 getContentPane().remove(mjpMap);
                 getContentPane().add(mjpSP);
                 getContentPane().add(mjpWC);
@@ -313,7 +333,7 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpC3.playerSpeed = 10;
             mjpC4.playerSpeed = 10;
             mjpC5.time = 70;
-            mjpWC.time = 70;
+            mjpWC.time = 65;
             getContentPane().remove(mjpCS);
             getContentPane().add(mjpT);
             validate();
@@ -546,61 +566,7 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().add(mjpCS);
                 validate();
                 repaint(); }
-        if(obj == mjpMap.test) {
-            gameTimer.stop();
-                getContentPane().remove(mjpMap);
-                getContentPane().add(mjpSB);
-                
-                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-                try {
-                    DocumentBuilder builder = factory.newDocumentBuilder();
-                    Document doc = builder.parse("info.xml");
-                    NodeList bestStats = doc.getElementsByTagName("int");
-                    int xmlBestTime = Integer.parseInt(bestStats.item(0).getTextContent());
-                    int xmlBestScore = Integer.parseInt(bestStats.item(1).getTextContent());
-                    if(xmlBestTime > totalTime) {
-                        overallBestTime = totalTime; }
-                    else { overallBestTime = xmlBestTime; }
-                    if(xmlBestScore < totalScore) { overallBestScore = totalScore; }
-                    else { overallBestScore = xmlBestScore; } 
-                } 
-                catch (ParserConfigurationException ex) {
-                    Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); } 
-                catch (SAXException ex) {
-                        Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); } 
-                catch (IOException ex) {
-                        Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); }
-                try {
-                    xe = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("info.xml"))); } 
-                catch (Exception xx) {
-                    xx.printStackTrace(); }
-                try {
-                    xe.writeObject(overallBestTime);
-                    xe.writeObject(overallBestScore); } 
-                catch (Exception xx) {
-                    xx.printStackTrace(); }
-                try {
-                    xe.close(); } 
-                catch (Exception xx) {
-                    xx.printStackTrace(); }
-                toggleArray[18]=1; 
-                mjpSB.finalTime.setBounds(650,200,500,100);
-                mjpSB.finalTime.setText("Total Time: "+totalTime);
-                mjpSB.add(mjpSB.finalTime);
-                mjpSB.finalScore.setBounds(250,200,500,100);
-                mjpSB.finalScore.setText("Total Score: "+totalScore);
-                mjpSB.add(mjpSB.finalScore);
-                mjpSB.gameOver.setBounds(300,00,600,200);
-                mjpSB.gameOver.setText("GAME OVER");
-                mjpSB.add(mjpSB.gameOver);
-                mjpSB.bestScore.setBounds(250,400,500,100);
-                mjpSB.bestScore.setText("Best Score: "+Integer.toString(overallBestScore));
-                mjpSB.add(mjpSB.bestScore);
-                mjpSB.bestTime.setBounds(650,400,500,100);
-                mjpSB.bestTime.setText("Best Time: "+Integer.toString(overallBestTime));
-                mjpSB.add(mjpSB.bestTime);
-                repaint();
-        }
+        if(obj == mjpMap.test) { }
         if(obj == checkTimer) {
             mjpSP.repaint();
             mjpI.repaint();
@@ -755,11 +721,8 @@ public class myJFrame extends JFrame implements ActionListener {
                 mjpSB.bestTime.setText("Best Time: "+Integer.toString(overallBestTime));
                 mjpSB.add(mjpSB.bestTime);
                 repaint();
-                    
-                
             }
         }
     }
-    
 }
 

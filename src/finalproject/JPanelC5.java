@@ -62,7 +62,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
         Jtest.setBounds(0,0,100,75);
         Jtest.setFocusable(false);
         Jtest.addActionListener(this);
-        add(Jtest);
+        //add(Jtest);
         player = new JButton();
         player.setBounds(140,140,50,50);
         player.setFocusable(false);
@@ -279,9 +279,6 @@ public class JPanelC5 extends JPanel  implements ActionListener {
         t32.setFocusable(false);
         t32.addActionListener(this);
         jButtonArray[31] = t32;
-//        for (int x = 0; x < jButtonArray.length; x++) {
-//            add(jButtonArray[x]);
-//        }
     }
     public void paintComponent(Graphics g) {
             g.drawImage(clouds, 0, 0, this); }

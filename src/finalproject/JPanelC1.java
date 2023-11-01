@@ -25,7 +25,8 @@ public class JPanelC1 extends JPanel implements ActionListener, KeyListener {
     int Y = 520;
     Font font;
     Timer gameTimer,buttonTimer;
-    int delay,delay2,playerx,playerx2,specialUses;
+    int delay,delay2,playerx,playerx2;
+    int specialUses = 2;
     int Playerx = 400;
     int done = 0;
     int toggleArray[] = new int[50];//1 timer start
@@ -40,6 +41,8 @@ public class JPanelC1 extends JPanel implements ActionListener, KeyListener {
         whiteLine = BorderFactory.createLineBorder(Color.WHITE,3);
         setBackground(Color.BLUE);
         setBorder(whiteLine);
+        setFocusable(true);
+        addKeyListener(this);
         //=========================================score buttons
         special = new JButton();
         special.setBounds(0,620,100,100);
@@ -49,8 +52,8 @@ public class JPanelC1 extends JPanel implements ActionListener, KeyListener {
         special.setFont(font);
         special.setFocusable(false);
         special.setText(""+specialUses);
-        add(special);
         special.addActionListener(this);
+        add(special);
         help = new JButton("?");
         help.setBounds(1180,620,100,100);
         help.setBorder(whiteLine);
@@ -74,8 +77,8 @@ public class JPanelC1 extends JPanel implements ActionListener, KeyListener {
         bouncer.setBorder(whiteLine);
         bouncer.setBackground(Color.orange);
         bouncer.setFocusable(false);
-        add(bouncer);
         bouncer.addActionListener(this);
+        add(bouncer);
         block1 = new JButton();
         block1.setBounds(193,200,307,50);
         block1.setBorder(whiteLine);
@@ -88,14 +91,11 @@ public class JPanelC1 extends JPanel implements ActionListener, KeyListener {
         block2.setBackground(Color.BLUE);
         block2.setFocusable(false);
         add(block2);
-        //=======================================
-        setFocusable(true);
-        addKeyListener(this);
         Jtest = new JButton("Test");
         Jtest.setBounds(1000,500,100,75);
         Jtest.setFocusable(false);
         Jtest.addActionListener(this);
-        add(Jtest);
+        //add(Jtest);
     }
     public void paintComponent(Graphics g) {
             g.drawImage(clouds, 0, 0, this); }
@@ -112,8 +112,7 @@ public class JPanelC1 extends JPanel implements ActionListener, KeyListener {
             if(specialUses>=1) {
                 specialUses-=1;
                 x*=-1;
-                y*=-1; }
-        }
+                y*=-1; } }
         if(obj == Jtest) {
             time = 2; 
             toggleArray[0]=1;
@@ -200,7 +199,7 @@ public class JPanelC1 extends JPanel implements ActionListener, KeyListener {
                 X = X+x;
                 Y = Y+y;
                 bouncer.setBounds(X,Y,50,50); }
-            //===================================block1 bouncer triggers block1.setBounds(193,200,307,50);
+            //===================================block1 bouncer triggers
             if(X==143 && Y==150) {
                 score+=1;
                 x = -1;
@@ -253,7 +252,7 @@ public class JPanelC1 extends JPanel implements ActionListener, KeyListener {
                 X = X+x;
                 Y = Y+y;
                 bouncer.setBounds(X,Y,50,50); }
-            //===================================block2 bouncer triggers block2.setBounds(773,200,307,50);
+            //===================================block2 bouncer triggers
             if(X==723 && Y==150) {
                 score+=1;
                 x = -1;

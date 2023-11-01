@@ -42,6 +42,7 @@ public class JPanelWC extends JPanel  implements ActionListener {
         special.setForeground(Color.WHITE);
         special.setFont(font);
         special.setFocusable(false);
+        special.addActionListener(this);
         special.setText(""+specialUses);
         add(special);
         help = new JButton("?");
@@ -61,7 +62,7 @@ public class JPanelWC extends JPanel  implements ActionListener {
         Jtest.setBounds(1000,500,100,75);
         Jtest.setFocusable(false);
         Jtest.addActionListener(this);
-        add(Jtest);
+        //add(Jtest);
         box = new JButton();
         box.setBounds(50,50,playerSize,playerSize);
         box.setFocusable(false);

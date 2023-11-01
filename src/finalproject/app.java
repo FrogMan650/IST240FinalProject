@@ -16,7 +16,7 @@ public class app {
 //JPanelC5 = Altoona(portals)    GOOD
 //JPanelWC = World Campus(click boxes)   GOOD
 //JPanelCS = Character Select   GOOD
-//JPanelSB = Scoreboard     BAD (completely broken?)
+//JPanelSB = Scoreboard     GOOD
 //JPanelSP = Score panel    GOOD
 //JPanelD = Directions      GOOD
 //JPanelI = Instructions    GOOD

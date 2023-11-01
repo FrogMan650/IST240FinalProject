@@ -38,7 +38,7 @@ public class mapJPanel extends JPanel implements KeyListener{
         blackLine = BorderFactory.createLineBorder(Color.BLACK,3);
         setBorder(blackLine);
         test.setBounds(1000,600,100,50);
-        add(test);
+        //add(test);
         up.setBounds(new Rectangle(560,350,50,50));
         up.setBackground(Color.WHITE);
         up.setForeground(Color.BLUE);

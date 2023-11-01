@@ -47,6 +47,8 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
         whiteLine = BorderFactory.createLineBorder(Color.WHITE,3);
         setBackground(Color.BLUE);
         setBorder(whiteLine);
+        setFocusable(true);
+        addKeyListener(this);
         special = new JButton();
         special.setBounds(0,620,100,100);
         special.setBorder(whiteLine);
@@ -88,13 +90,11 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
         target.setBackground(Color.BLUE);
         target.setFocusable(false);
         add(target);
-        setFocusable(true);
-        addKeyListener(this);
         Jtest = new JButton("Test");
         Jtest.setBounds(1000,500,100,75);
         Jtest.setFocusable(false);
         Jtest.addActionListener(this);
-        add(Jtest);
+        //add(Jtest);
     }
     public void paintComponent(Graphics g) {
             g.drawImage(clouds, 0, 0, this); }
@@ -110,8 +110,7 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
             specialPause=0;
             buttonTimer.start();
             validate();
-            repaint();
-        }
+            repaint(); }
         if(obj == Jtest) {
             time = 2; 
             gameTimer.start(); }

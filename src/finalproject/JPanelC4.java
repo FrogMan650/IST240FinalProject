@@ -73,7 +73,7 @@ public class JPanelC4 extends JPanel  implements ActionListener, KeyListener {
         Jtest.setBounds(1000,500,100,75);
         Jtest.setFocusable(false);
         Jtest.addActionListener(this);
-        add(Jtest);
+        //add(Jtest);
         player = new JButton();
         player.setBounds(playerx,playery,playerSize,playerSize);
         player.setFocusable(false);

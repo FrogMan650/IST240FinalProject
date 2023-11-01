@@ -120,7 +120,7 @@ public class JPanelC3 extends JPanel  implements ActionListener, KeyListener {
         Jtest.setBounds(1000,500,100,75);
         Jtest.setFocusable(false);
         Jtest.addActionListener(this);
-        add(Jtest);
+        //add(Jtest);
     }
     public void paintComponent(Graphics g) {
             g.drawImage(clouds, 0, 0, this); }
