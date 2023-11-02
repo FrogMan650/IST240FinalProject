@@ -19,7 +19,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
     int score = 0;
     int time = 60;
     int specialUses = 1;
-    int toggleArray[] = new int[50];//0 transformation, 1 game end
+    int toggleArray[] = new int[5];//0 transformation, 1 game end
     Font font;
     Timer gameTimer, transformationTimer;
     int delay;
@@ -299,7 +299,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t1);
             add(t2);
             add(t9);
-            add(t10);
+            add(t10); 
             repaint(); }
         if(obj == transformationTimer) {
             add(t32);
@@ -315,8 +315,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t21);
             add(t22);
             add(t29);
-            add(t30);
-            repaint(); }
+            add(t30); }
         if(obj == t2) {
             //System.out.println("t2"); 
             player.setBounds(775,280,50,50);
@@ -324,8 +323,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t14);
             add(t13);
             add(t22);
-            add(t21);
-            repaint(); }
+            add(t21); }
         if(obj == t3) {
             //System.out.println("t3"); 
             player.setBounds(300,440,50,50);
@@ -333,8 +331,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t18);
             add(t19);
             add(t26);
-            add(t27);
-            repaint(); }
+            add(t27); }
         if(obj == t4) {
             //System.out.println("t4"); 
             player.setBounds(775,140,50,50);
@@ -342,8 +339,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t13);
             add(t14);
             add(t21);
-            add(t22);
-            repaint(); }
+            add(t22); }
         if(obj == t5) {
             //System.out.println("t5"); 
             player.setBounds(620,440,50,50);
@@ -351,8 +347,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t20);
             add(t21);
             add(t28);
-            add(t29);
-            repaint(); }
+            add(t29); }
         if(obj == t6) {
             //System.out.println("t6"); 
             player.setBounds(140,140,50,50);
@@ -360,8 +355,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t1);
             add(t2);
             add(t9);
-            add(t10);
-            repaint(); }
+            add(t10); }
         if(obj == t7) {
             //System.out.println("t7"); 
             player.setBounds(310,280,50,50);
@@ -369,8 +363,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t10);
             add(t11);
             add(t18);
-            add(t19);
-            repaint(); }
+            add(t19); }
         if(obj == t8) {
             //System.out.println("t8"); 
             player.setBounds(460,280,50,50);
@@ -378,8 +371,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t11);
             add(t12);
             add(t19);
-            add(t20);
-            repaint(); }
+            add(t20); }
         if(obj == t9) {
             //System.out.println("t9"); 
             player.setBounds(780,140,50,50);
@@ -387,8 +379,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t6);
             add(t5);
             add(t14);
-            add(t13);
-            repaint(); }
+            add(t13); }
         if(obj == t10) {
             //System.out.println("t10"); 
             player.setBounds(940,140,50,50);
@@ -396,8 +387,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t6);
             add(t7);
             add(t14);
-            add(t15);
-            repaint(); }
+            add(t15); }
         if(obj == t11) {
             //System.out.println("t11"); 
             player.setBounds(620,280,50,50);
@@ -405,8 +395,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t12);
             add(t13);
             add(t20);
-            add(t21);
-            repaint(); }
+            add(t21); }
         if(obj == t12) {
             //System.out.println("t12"); 
             player.setBounds(140,440,50,50);
@@ -414,8 +403,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t17);
             add(t18);
             add(t25);
-            add(t26);
-            repaint(); }
+            add(t26); }
         if(obj == t13) {
             //System.out.println("t13"); 
             player.setBounds(450,140,50,50);
@@ -423,8 +411,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t3);
             add(t4);
             add(t11);
-            add(t12);
-            repaint(); }
+            add(t12); }
         if(obj == t14) {
             //System.out.println("t14"); 
             player.setBounds(300,140,50,50);
@@ -432,8 +419,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t2);
             add(t3);
             add(t10);
-            add(t11);
-            repaint(); }
+            add(t11); }
         if(obj == t15) {
             //System.out.println("t15"); 
             player.setBounds(940,440,50,50);
@@ -441,8 +427,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t22);
             add(t23);
             add(t30);
-            add(t31);
-            repaint(); }
+            add(t31); }
         if(obj == t16) {
             //System.out.println("t16"); 
             player.setBounds(140,280,50,50);
@@ -450,8 +435,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t9);
             add(t10);
             add(t17);
-            add(t18);
-            repaint(); }
+            add(t18); }
         if(obj == t17) {
             //System.out.println("t17"); 
             player.setBounds(940,440,50,50);
@@ -459,8 +443,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t22);
             add(t23);
             add(t30);
-            add(t31);
-            repaint(); }
+            add(t31); }
         if(obj == t18) {
             //System.out.println("t18"); 
             player.setBounds(1100,140,50,50);
@@ -468,8 +451,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t7);
             add(t8);
             add(t15);
-            add(t16);
-            repaint(); }
+            add(t16); }
         if(obj == t19) {
             //System.out.println("t19"); 
             player.setBounds(1100,140,50,50);
@@ -477,8 +459,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t7);
             add(t8);
             add(t15);
-            add(t16);
-            repaint(); }
+            add(t16); }
         if(obj == t20) {
             //System.out.println("t20");
             player.setBounds(1100,440,50,50);
@@ -487,8 +468,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t23);
             add(t24);
             add(t31);
-            add(t32);
-            repaint(); }
+            add(t32); }
         if(obj == t21) {
             //System.out.println("t21"); 
             player.setBounds(775,140,50,50);
@@ -496,8 +476,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t4);
             add(t3);
             add(t12);
-            add(t11);
-            repaint(); }
+            add(t11); }
         if(obj == t22) {
             //System.out.println("t22"); 
             player.setBounds(1100,280,50,50);
@@ -505,8 +484,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t15);
             add(t16);
             add(t23);
-            add(t24);
-            repaint(); }
+            add(t24); }
         if(obj == t23) {
             //System.out.println("t23"); 
             player.setBounds(140,280,50,50);
@@ -514,8 +492,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t9);
             add(t10);
             add(t17);
-            add(t18);
-            repaint(); }
+            add(t18); }
         if(obj == t24) {
             //System.out.println("t24"); 
             player.setBounds(460,440,50,50);
@@ -523,8 +500,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t19);
             add(t20);
             add(t27);
-            add(t28);
-            repaint(); }
+            add(t28); }
         if(obj == t25) {
             //System.out.println("t25"); 
             player.setBounds(775,140,50,50);
@@ -532,8 +508,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t12);
             add(t13);
             add(t20);
-            add(t21);
-            repaint(); }
+            add(t21); }
         if(obj == t26) {
             //System.out.println("t26"); 
             player.setBounds(300,140,50,50);
@@ -541,8 +516,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t2);
             add(t3);
             add(t10);
-            add(t11);
-            repaint(); }
+            add(t11); }
         if(obj == t27) {
             //System.out.println("t27"); 
             player.setBounds(1100,440,50,50);
@@ -550,8 +524,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t23);
             add(t24);
             add(t31);
-            add(t32);
-            repaint(); }
+            add(t32); }
         if(obj == t28) {
             //System.out.println("t28"); 
             player.setBounds(1100,280,50,50);
@@ -559,8 +532,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t15);
             add(t16);
             add(t23);
-            add(t24);
-            repaint(); }
+            add(t24); }
         if(obj == t29) {
             //System.out.println("t29"); 
             player.setBounds(620,140,50,50);
@@ -568,8 +540,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t4);
             add(t5);
             add(t12);
-            add(t13);
-            repaint(); }
+            add(t13); }
         if(obj == t30) {
             //System.out.println("t30"); 
             player.setBounds(140,140,50,50);
@@ -577,8 +548,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t1);
             add(t2);
             add(t9);
-            add(t10);
-            repaint(); }
+            add(t10); }
         if(obj == t31) {
             //System.out.println("t31"); 
             player.setBounds(460,280,50,50);
@@ -587,8 +557,7 @@ public class JPanelC5 extends JPanel  implements ActionListener {
             add(t11);
             add(t12);
             add(t19);
-            add(t20);
-            repaint(); }
+            add(t20); }
         if(obj == t32) {
             if(toggleArray[1] == 1) {
                 score = 10;

@@ -37,10 +37,12 @@ public class myJFrame extends JFrame implements ActionListener {
         Timer gameTimer,checkTimer;
         Border whiteLine,blackLine,pinkLine;
         int delay,delay2,totalTime,totalScore;
-        int toggleArray[] = new int[50]; //0-5 map button toggles
+        int toggleArray[] = new int[20]; //0-5 map button toggles
                                          //6-11 mjpSP currentTime & currentScore updaters 
                                          //12-17 game close toggles
                                          //18 Game end
+        //holds all the button to change the theme of
+        JButton buttonThemeArray[] = new JButton[28];
         int overallBestTime;
         int overallBestScore;
 	public myJFrame () {
@@ -132,13 +134,11 @@ public class myJFrame extends JFrame implements ActionListener {
              getContentPane().add(mjpI);
              mjpC1.remove(mjpC1.help);
              mjpC1.add(mjpC1.help2);
-             validate();
              repaint(); }
         if(obj == mjpC1.help2) {
              getContentPane().remove(mjpI);
              mjpC1.remove(mjpC1.help2);
              mjpC1.add(mjpC1.help);
-             validate();
              repaint(); }
         //========================================================mjpC2 buttons
         if(obj == mjpC2.help) {
@@ -156,13 +156,11 @@ public class myJFrame extends JFrame implements ActionListener {
              getContentPane().add(mjpI);
              mjpC2.remove(mjpC2.help);
              mjpC2.add(mjpC2.help2);
-             validate();
              repaint(); }
         if(obj == mjpC2.help2) {
              getContentPane().remove(mjpI);
              mjpC2.remove(mjpC2.help2);
              mjpC2.add(mjpC2.help);
-             validate();
              repaint(); }
         //========================================================mjpC3 buttons
         if(obj == mjpC3.help) {
@@ -179,13 +177,11 @@ public class myJFrame extends JFrame implements ActionListener {
              getContentPane().add(mjpI);
              mjpC3.remove(mjpC3.help);
              mjpC3.add(mjpC3.help2);
-             validate();
              repaint(); }
         if(obj == mjpC3.help2) {
              getContentPane().remove(mjpI);
              mjpC3.remove(mjpC3.help2);
              mjpC3.add(mjpC3.help);
-             validate();
              repaint(); }
         //========================================================mjpC4 buttons
         if(obj == mjpC4.help) {
@@ -201,13 +197,11 @@ public class myJFrame extends JFrame implements ActionListener {
              getContentPane().add(mjpI);
              mjpC4.remove(mjpC4.help);
              mjpC4.add(mjpC4.help2);
-             validate();
              repaint(); }
         if(obj == mjpC4.help2) {
              getContentPane().remove(mjpI);
              mjpC4.remove(mjpC4.help2);
              mjpC4.add(mjpC4.help);
-             validate();
              repaint(); }
         //========================================================mjpC5 buttons
         if(obj == mjpC5.help) {
@@ -224,13 +218,11 @@ public class myJFrame extends JFrame implements ActionListener {
              getContentPane().add(mjpI);
              mjpC5.remove(mjpC5.help);
              mjpC5.add(mjpC5.help2);
-             validate();
              repaint(); }
         if(obj == mjpC5.help2) {
              getContentPane().remove(mjpI);
              mjpC5.remove(mjpC5.help2);
              mjpC5.add(mjpC5.help);
-             validate();
              repaint(); }
         //========================================================mjpWC buttons
         if(obj == mjpWC.help) {
@@ -244,13 +236,11 @@ public class myJFrame extends JFrame implements ActionListener {
              getContentPane().add(mjpI);
              mjpWC.remove(mjpWC.help);
              mjpWC.add(mjpWC.help2);
-             validate();
              repaint(); }
         if(obj == mjpWC.help2) {
              getContentPane().remove(mjpI);
              mjpWC.remove(mjpWC.help2);
              mjpWC.add(mjpWC.help);
-             validate();
              repaint(); }
         //====================================================================================================================================mjpMap panel triggers
             if(mjpMap.playerx>=510 && mjpMap.playerx<=600 && mjpMap.playery>=320 && mjpMap.playery<=390 && toggleArray[0]==0) {//UP
@@ -262,7 +252,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().add(mjpSP);
                 getContentPane().add(mjpC1);
                 mjpC1.requestFocusInWindow();
-                validate();
                 repaint(); }
             if(mjpMap.playerx>=0 && mjpMap.playerx<=90 && mjpMap.playery>=10 && mjpMap.playery<=80 && toggleArray[1]==0) {//erie
                 toggleArray[1]=1;
@@ -273,7 +262,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().add(mjpC2);
                 getContentPane().add(mjpSP);
                 mjpC2.requestFocusInWindow();
-                validate();
                 repaint(); }
             if(mjpMap.playerx>=650 && mjpMap.playerx<=740 && mjpMap.playery>=570 && mjpMap.playery<=640 && toggleArray[2]==0) {//york
                 toggleArray[2]=1;
@@ -283,7 +271,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().add(mjpSP);
                 getContentPane().add(mjpC3);
                 mjpC3.requestFocusInWindow();
-                validate();
                 repaint(); }
             if(mjpMap.playerx>=900 && mjpMap.playerx<=990 && mjpMap.playery>=170 && mjpMap.playery<=240 && toggleArray[3]==0) {//scranton
                 toggleArray[3]=1;
@@ -294,7 +281,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().add(mjpSP);
                 getContentPane().add(mjpC4);
                 mjpC4.requestFocusInWindow();
-                validate();
                 repaint(); }
             if(mjpMap.playerx>=300 && mjpMap.playerx<=390 && mjpMap.playery>=420 && mjpMap.playery<=490 && toggleArray[4]==0) {//altoona
                 toggleArray[4]=1;
@@ -305,7 +291,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().add(mjpSP);
                 getContentPane().add(mjpC5);
                 mjpC5.requestFocusInWindow();
-                validate();
                 repaint(); }
             if(mjpMap.playerx>=480 && mjpMap.playerx<=710 && mjpMap.playery>=-20 && mjpMap.playery<=50 && toggleArray[5]==0) {//wc
                 toggleArray[5]=1;
@@ -316,9 +301,8 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().add(mjpSP);
                 getContentPane().add(mjpWC);
                 mjpWC.requestFocusInWindow();
-                validate();
                 repaint(); }
-            //====================================================================================================================================
+            //==============================================================
         if(obj == gameTimer) {
             totalTime+=1; }
         //========================================mjpCS character variable changers
@@ -336,7 +320,6 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpWC.time = 65;
             getContentPane().remove(mjpCS);
             getContentPane().add(mjpT);
-            validate();
             repaint(); }
         if(obj == mjpCS.Char2) {//TRANSFORMATION
             mjpC1.playerx = 300;
@@ -352,7 +335,6 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpWC.playerSize = 150;
             getContentPane().remove(mjpCS);
             getContentPane().add(mjpT);
-            validate();
             repaint(); }
         if(obj == mjpCS.Char3) {//SKILLED
             mjpC1.playerx = 150;
@@ -368,203 +350,68 @@ public class myJFrame extends JFrame implements ActionListener {
             mjpWC.specialUses = 3;
             getContentPane().remove(mjpCS);
             getContentPane().add(mjpT);
-            validate();
             repaint(); }
+        //========================================mjpT theme array set
+        buttonThemeArray[0] = mjpC1.player;
+        buttonThemeArray[1] = mjpC1.block1;
+        buttonThemeArray[2] = mjpC1.block2;
+        buttonThemeArray[3] = mjpC2.player;
+        buttonThemeArray[4] = mjpC2.target;
+        buttonThemeArray[5] = mjpC3.player;
+        buttonThemeArray[6] = mjpC3.m1;
+        buttonThemeArray[7] = mjpC3.m2;
+        buttonThemeArray[8] = mjpC3.m21;
+        buttonThemeArray[9] = mjpC3.m3;
+        buttonThemeArray[10] = mjpC3.m31;
+        buttonThemeArray[11] = mjpC3.m32;
+        buttonThemeArray[12] = mjpC3.m4;
+        buttonThemeArray[13] = mjpC3.m41;
+        buttonThemeArray[14] = mjpC3.m42;
+        buttonThemeArray[15] = mjpC3.m43;
+        buttonThemeArray[16] = mjpC4.player;
+        buttonThemeArray[17] = mjpC4.obj1;
+        buttonThemeArray[18] = mjpC4.obj2;
+        buttonThemeArray[19] = mjpC4.obj3;
+        buttonThemeArray[20] = mjpC4.obj4;
+        buttonThemeArray[21] = mjpC4.obj5;
+        buttonThemeArray[22] = mjpC4.obj6;
+        buttonThemeArray[23] = mjpC4.obj7;
+        buttonThemeArray[24] = mjpC4.obj8;
+        buttonThemeArray[25] = mjpC5.player;
+        buttonThemeArray[26] = mjpC5.t32;
+        buttonThemeArray[27] = mjpWC.box;
         //========================================mjpT theme variable changers
         if(obj == mjpT.Char1) {//BLUE/WHITE
             gameTimer.start();
-            mjpC1.player.setBackground(Color.BLUE);
-            mjpC1.player.setBorder(whiteLine);
-            mjpC1.block1.setBackground(Color.BLUE);
-            mjpC1.block1.setBorder(whiteLine);
-            mjpC1.block2.setBackground(Color.BLUE);
-            mjpC1.block2.setBorder(whiteLine);
-            mjpC2.player.setBackground(Color.BLUE);
-            mjpC2.player.setBorder(whiteLine);
-            mjpC2.target.setBackground(Color.BLUE);
-            mjpC2.target.setBorder(whiteLine);
-            mjpC3.player.setBackground(Color.BLUE);
-            mjpC3.player.setBorder(whiteLine);
-            mjpC3.m1.setBackground(Color.BLUE);
-            mjpC3.m1.setBorder(whiteLine);
-            mjpC3.m2.setBackground(Color.BLUE);
-            mjpC3.m2.setBorder(whiteLine);
-            mjpC3.m21.setBackground(Color.BLUE);
-            mjpC3.m21.setBorder(whiteLine);
-            mjpC3.m3.setBackground(Color.BLUE);
-            mjpC3.m3.setBorder(whiteLine);
-            mjpC3.m31.setBackground(Color.BLUE);
-            mjpC3.m31.setBorder(whiteLine);
-            mjpC3.m32.setBackground(Color.BLUE);
-            mjpC3.m32.setBorder(whiteLine);
-            mjpC3.m4.setBackground(Color.BLUE);
-            mjpC3.m4.setBorder(whiteLine);
-            mjpC3.m41.setBackground(Color.BLUE);
-            mjpC3.m41.setBorder(whiteLine);
-            mjpC3.m42.setBackground(Color.BLUE);
-            mjpC3.m42.setBorder(whiteLine);
-            mjpC3.m43.setBackground(Color.BLUE);
-            mjpC3.m43.setBorder(whiteLine);
-            mjpC4.player.setBackground(Color.BLUE);
-            mjpC4.player.setBorder(whiteLine);
-            mjpC4.obj1.setBackground(Color.BLUE);
-            mjpC4.obj1.setBorder(whiteLine);
-            mjpC4.obj2.setBackground(Color.BLUE);
-            mjpC4.obj2.setBorder(whiteLine);
-            mjpC4.obj3.setBackground(Color.BLUE);
-            mjpC4.obj3.setBorder(whiteLine);
-            mjpC4.obj4.setBackground(Color.BLUE);
-            mjpC4.obj4.setBorder(whiteLine);
-            mjpC4.obj5.setBackground(Color.BLUE);
-            mjpC4.obj5.setBorder(whiteLine);
-            mjpC4.obj6.setBackground(Color.BLUE);
-            mjpC4.obj6.setBorder(whiteLine);
-            mjpC4.obj7.setBackground(Color.BLUE);
-            mjpC4.obj7.setBorder(whiteLine);
-            mjpC4.obj8.setBackground(Color.BLUE);
-            mjpC4.obj8.setBorder(whiteLine);
-            mjpC5.player.setBackground(Color.BLUE);
-            mjpC5.player.setBorder(whiteLine);
-            mjpC5.t32.setBackground(Color.BLUE);
-            mjpC5.t32.setBorder(whiteLine);
-            mjpWC.box.setBackground(Color.BLUE);
-            mjpWC.box.setBorder(whiteLine);
+            for(int i = 0;i < buttonThemeArray.length;i += 1) {
+                buttonThemeArray[i].setBackground(Color.BLUE);
+                buttonThemeArray[i].setBorder(whiteLine); }
             getContentPane().remove(mjpT);
             getContentPane().add(mjpMap);
-            validate();
             repaint();
             mjpMap.requestFocusInWindow(); }
         if(obj == mjpT.Char2) {//GREEN/PINK
             gameTimer.start();
-            mjpC1.player.setBackground(Color.green);
-            mjpC1.player.setBorder(pinkLine);
-            mjpC1.block1.setBackground(Color.green);
-            mjpC1.block1.setBorder(pinkLine);
-            mjpC1.block2.setBackground(Color.green);
-            mjpC1.block2.setBorder(pinkLine);
-            mjpC2.player.setBackground(Color.green);
-            mjpC2.player.setBorder(pinkLine);
-            mjpC2.target.setBackground(Color.green);
-            mjpC2.target.setBorder(pinkLine);
-            mjpC3.player.setBackground(Color.green);
-            mjpC3.player.setBorder(pinkLine);
-            mjpC3.m1.setBackground(Color.green);
-            mjpC3.m1.setBorder(pinkLine);
-            mjpC3.m2.setBackground(Color.green);
-            mjpC3.m2.setBorder(pinkLine);
-            mjpC3.m21.setBackground(Color.green);
-            mjpC3.m21.setBorder(pinkLine);
-            mjpC3.m3.setBackground(Color.green);
-            mjpC3.m3.setBorder(pinkLine);
-            mjpC3.m31.setBackground(Color.green);
-            mjpC3.m31.setBorder(pinkLine);
-            mjpC3.m32.setBackground(Color.green);
-            mjpC3.m32.setBorder(pinkLine);
-            mjpC3.m4.setBackground(Color.green);
-            mjpC3.m4.setBorder(pinkLine);
-            mjpC3.m41.setBackground(Color.green);
-            mjpC3.m41.setBorder(pinkLine);
-            mjpC3.m42.setBackground(Color.green);
-            mjpC3.m42.setBorder(pinkLine);
-            mjpC3.m43.setBackground(Color.green);
-            mjpC3.m43.setBorder(pinkLine);
-            mjpC4.player.setBackground(Color.green);
-            mjpC4.player.setBorder(pinkLine);
-            mjpC4.obj1.setBackground(Color.green);
-            mjpC4.obj1.setBorder(pinkLine);
-            mjpC4.obj2.setBackground(Color.green);
-            mjpC4.obj2.setBorder(pinkLine);
-            mjpC4.obj3.setBackground(Color.green);
-            mjpC4.obj3.setBorder(pinkLine);
-            mjpC4.obj4.setBackground(Color.green);
-            mjpC4.obj4.setBorder(pinkLine);
-            mjpC4.obj5.setBackground(Color.green);
-            mjpC4.obj5.setBorder(pinkLine);
-            mjpC4.obj6.setBackground(Color.green);
-            mjpC4.obj6.setBorder(pinkLine);
-            mjpC4.obj7.setBackground(Color.green);
-            mjpC4.obj7.setBorder(pinkLine);
-            mjpC4.obj8.setBackground(Color.green);
-            mjpC4.obj8.setBorder(pinkLine);
-            mjpWC.box.setBackground(Color.green);
-            mjpWC.box.setBorder(pinkLine);
-            mjpC5.player.setBackground(Color.green);
-            mjpC5.player.setBorder(pinkLine);
-            mjpC5.t32.setBackground(Color.green);
-            mjpC5.t32.setBorder(pinkLine);
+            for(int i = 0;i < buttonThemeArray.length;i += 1) {
+                buttonThemeArray[i].setBackground(Color.green);
+                buttonThemeArray[i].setBorder(pinkLine); }
             getContentPane().remove(mjpT);
             getContentPane().add(mjpMap);
-            validate();
             repaint();
             mjpMap.requestFocusInWindow(); }
         if(obj == mjpT.Char3) {//WHITE/BLACK
             gameTimer.start();
-            mjpC1.player.setBackground(Color.WHITE);
-            mjpC1.player.setBorder(blackLine);
-            mjpC1.block1.setBackground(Color.WHITE);
-            mjpC1.block1.setBorder(blackLine);
-            mjpC1.block2.setBackground(Color.WHITE);
-            mjpC1.block2.setBorder(blackLine);
-            mjpC2.player.setBackground(Color.WHITE);
-            mjpC2.player.setBorder(blackLine);
-            mjpC2.target.setBackground(Color.WHITE);
-            mjpC2.target.setBorder(blackLine);
-            mjpC3.player.setBackground(Color.WHITE);
-            mjpC3.player.setBorder(blackLine);
-            mjpC3.m1.setBackground(Color.WHITE);
-            mjpC3.m1.setBorder(blackLine);
-            mjpC3.m2.setBackground(Color.WHITE);
-            mjpC3.m2.setBorder(blackLine);
-            mjpC3.m21.setBackground(Color.WHITE);
-            mjpC3.m21.setBorder(blackLine);
-            mjpC3.m3.setBackground(Color.WHITE);
-            mjpC3.m3.setBorder(blackLine);
-            mjpC3.m31.setBackground(Color.WHITE);
-            mjpC3.m31.setBorder(blackLine);
-            mjpC3.m32.setBackground(Color.WHITE);
-            mjpC3.m32.setBorder(blackLine);
-            mjpC3.m4.setBackground(Color.WHITE);
-            mjpC3.m4.setBorder(blackLine);
-            mjpC3.m41.setBackground(Color.WHITE);
-            mjpC3.m41.setBorder(blackLine);
-            mjpC3.m42.setBackground(Color.WHITE);
-            mjpC3.m42.setBorder(blackLine);
-            mjpC3.m43.setBackground(Color.WHITE);
-            mjpC3.m43.setBorder(blackLine);
-            mjpC4.player.setBackground(Color.WHITE);
-            mjpC4.player.setBorder(blackLine);
-            mjpC4.obj1.setBackground(Color.WHITE);
-            mjpC4.obj1.setBorder(blackLine);
-            mjpC4.obj2.setBackground(Color.WHITE);
-            mjpC4.obj2.setBorder(blackLine);
-            mjpC4.obj3.setBackground(Color.WHITE);
-            mjpC4.obj3.setBorder(blackLine);
-            mjpC4.obj4.setBackground(Color.WHITE);
-            mjpC4.obj4.setBorder(blackLine);
-            mjpC4.obj5.setBackground(Color.WHITE);
-            mjpC4.obj5.setBorder(blackLine);
-            mjpC4.obj6.setBackground(Color.WHITE);
-            mjpC4.obj6.setBorder(blackLine);
-            mjpC4.obj7.setBackground(Color.WHITE);
-            mjpC4.obj7.setBorder(blackLine);
-            mjpC4.obj8.setBackground(Color.WHITE);
-            mjpC4.obj8.setBorder(blackLine);
-            mjpC5.player.setBackground(Color.WHITE);
-            mjpC5.player.setBorder(blackLine);
-            mjpC5.t32.setBackground(Color.WHITE);
-            mjpC5.t32.setBorder(blackLine);
-            mjpWC.box.setBackground(Color.WHITE);
-            mjpWC.box.setBorder(blackLine);
+            for(int i = 0;i < buttonThemeArray.length;i += 1) {
+                buttonThemeArray[i].setBackground(Color.WHITE);
+                buttonThemeArray[i].setBorder(blackLine); }
             getContentPane().remove(mjpT);
             getContentPane().add(mjpMap);
-            validate();
             repaint();
             mjpMap.requestFocusInWindow(); }
         //========================================
         if(obj == mjpD.go) {
                 getContentPane().remove(mjpD);
                 getContentPane().add(mjpCS);
-                validate();
                 repaint(); }
         if(obj == mjpMap.test) { }
         if(obj == checkTimer) {
@@ -605,7 +452,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().remove(mjpI);
                 getContentPane().add(mjpMap);
                 mjpMap.requestFocusInWindow();
-                validate();
                 repaint(); }
             if(mjpC2.time==0 && toggleArray[13]==0) {
                 toggleArray[13]=1;
@@ -617,7 +463,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().remove(mjpI);
                 getContentPane().add(mjpMap);
                 mjpMap.requestFocusInWindow();
-                validate();
                 repaint(); }
             if(mjpC3.time==0 && toggleArray[14]==0) {
                 toggleArray[14]=1;
@@ -629,7 +474,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().remove(mjpI);
                 getContentPane().add(mjpMap);
                 mjpMap.requestFocusInWindow();
-                validate();
                 repaint(); }
             if(mjpC4.time==0 && toggleArray[15]==0) {
                 toggleArray[15]=1;
@@ -641,7 +485,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().remove(mjpI);
                 getContentPane().add(mjpMap);
                 mjpMap.requestFocusInWindow();
-                validate();
                 repaint(); }
             if(mjpC5.time==0 && toggleArray[16]==0) {
                 toggleArray[16]=1;
@@ -653,7 +496,6 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().remove(mjpI);
                 getContentPane().add(mjpMap);
                 mjpMap.requestFocusInWindow();
-                validate();
                 repaint(); }
             if(mjpWC.time==0 && toggleArray[17]==0) {
                 toggleArray[17]=1;
@@ -665,13 +507,14 @@ public class myJFrame extends JFrame implements ActionListener {
                 getContentPane().remove(mjpI);
                 getContentPane().add(mjpMap);
                 mjpMap.requestFocusInWindow();
-                validate();
                 repaint(); }
+            //once 5/6 games have been finished this is triggered
             if(mjpC1.done+mjpC2.done+mjpC3.done+mjpC4.done+mjpC5.done+mjpWC.done == 10 && toggleArray[18]==0) {
                 gameTimer.stop();
                 getContentPane().remove(mjpMap);
                 getContentPane().add(mjpSB);
-                
+                //opens the xml where the best time and score is stored and parses it
+                //making variables for each, and making them int
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
                 try {
                     DocumentBuilder builder = factory.newDocumentBuilder();
@@ -679,6 +522,7 @@ public class myJFrame extends JFrame implements ActionListener {
                     NodeList bestStats = doc.getElementsByTagName("int");
                     int xmlBestTime = Integer.parseInt(bestStats.item(0).getTextContent());
                     int xmlBestScore = Integer.parseInt(bestStats.item(1).getTextContent());
+                    //deciding to add a new score/time
                     if(xmlBestTime > totalTime) {
                         overallBestTime = totalTime; }
                     else { overallBestTime = xmlBestTime; }
@@ -691,10 +535,12 @@ public class myJFrame extends JFrame implements ActionListener {
                         Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); } 
                 catch (IOException ex) {
                         Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); }
+                //try to open a stream to the xml and write to it
                 try {
                     xe = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("info.xml"))); } 
                 catch (Exception xx) {
                     xx.printStackTrace(); }
+                //writing the best time and score to the xml
                 try {
                     xe.writeObject(overallBestTime);
                     xe.writeObject(overallBestScore); } 
@@ -704,6 +550,7 @@ public class myJFrame extends JFrame implements ActionListener {
                     xe.close(); } 
                 catch (Exception xx) {
                     xx.printStackTrace(); }
+                //adding all the scoreboard labels
                 toggleArray[18]=1;
                 mjpSB.finalTime.setBounds(650,200,500,100);
                 mjpSB.finalTime.setText("Total Time: "+totalTime);

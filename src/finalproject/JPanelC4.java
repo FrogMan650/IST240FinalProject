@@ -29,7 +29,7 @@ public class JPanelC4 extends JPanel  implements ActionListener, KeyListener {
     int randomNumber;
     int specialUses = 2;
     int specialPause;
-    int toggleArray[] = new int[50];//0 game start,1 special toggle
+    int toggleArray[] = new int[5];//0 game start,1 special toggle
     int arrayX[] = new int[50];
     int arrayY[] = new int[50];
     public JPanelC4() {

@@ -33,7 +33,7 @@ public class JPanelC3 extends JPanel  implements ActionListener, KeyListener {
     int y = 1;
     int y2 = -1;
     int specialUses = 2;
-    int toggleArray[] = new int[50];//0 game start
+    int toggleArray[] = new int[5];//0 game start
     public JPanelC3() {
         setLayout(null);
         setBackground(Color.blue);

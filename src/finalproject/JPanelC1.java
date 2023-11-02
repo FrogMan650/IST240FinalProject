@@ -29,7 +29,7 @@ public class JPanelC1 extends JPanel implements ActionListener, KeyListener {
     int specialUses = 2;
     int Playerx = 400;
     int done = 0;
-    int toggleArray[] = new int[50];//1 timer start
+    int toggleArray[] = new int[5];//1 timer start
     public JPanelC1() {
         setLayout(null);
         setBackground(Color.blue);

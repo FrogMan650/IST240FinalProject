@@ -34,7 +34,7 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
     int specialUses = 2;
     int specialPause;
     int done = 0;
-    int toggleArray[] = new int[50];//0 timer start,1 - 7 button score toggles
+    int toggleArray[] = new int[10];//0 timer start,1 - 7 button score toggles
     public JPanelC2() {
         setLayout(null);
         setBackground(Color.blue);
@@ -109,7 +109,6 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
             specialTimer.stop();
             specialPause=0;
             buttonTimer.start();
-            validate();
             repaint(); }
         if(obj == Jtest) {
             time = 2; 
@@ -117,15 +116,16 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
         if(obj == bouncer && toggleArray[0]==0) {
             toggleArray[0]=1;
             toggleArray[1]=1;
+            special.setText(""+specialUses);
             gameTimer.start();
             buttonTimer.start(); }
         if(obj == special && toggleArray[0]==1) {
             if(specialUses>=1) {
                 specialUses-=1;
                 buttonTimer.stop();
+                special.setText(""+specialUses);
                 specialTimer.start(); } }
         if(obj == buttonTimer) {
-            special.setText(""+specialUses);
             //===================================bouncer window triggers
             if(X>0 && X<1230 && Y<570 && Y>0) {
                 X = X+x;
@@ -230,7 +230,6 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
                 toggleArray[2]=1;
                 target.setBounds(targetx,targety,100,100);
                 add(target);
-                validate();
                 repaint(); }
             if(X<(targetx+100) && X>(targetx-50) && Y<(targety+100) && Y>(targety-50) && toggleArray[2]==1) {
                 toggleArray[2]=0;
@@ -241,7 +240,6 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
                 toggleArray[3]=1;
                 target.setBounds(targetx,targety,100,100);
                 add(target);
-                validate();
                 repaint(); }
             if(X<(targetx+100) && X>(targetx-50) && Y<(targety+100) && Y>(targety-50) && toggleArray[3]==1) {
                 toggleArray[3]=0;
@@ -252,7 +250,6 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
                 toggleArray[4]=1;
                 target.setBounds(targetx,targety,100,100);
                 add(target);
-                validate();
                 repaint(); }
             if(X<(targetx+100) && X>(targetx-50) && Y<(targety+100) && Y>(targety-50) && toggleArray[4]==1) {
                 toggleArray[4]=0;
@@ -263,7 +260,6 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
                 toggleArray[5]=1;
                 target.setBounds(targetx,targety,100,100);
                 add(target);
-                validate();
                 repaint(); }
             if(X<(targetx+100) && X>(targetx-50) && Y<(targety+100) && Y>(targety-50) && toggleArray[5]==1) {
                 toggleArray[5]=0;
@@ -274,7 +270,6 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
                 toggleArray[6]=1;
                 target.setBounds(targetx,targety,100,100);
                 add(target);
-                validate();
                 repaint(); }
             if(X<(targetx+100) && X>(targetx-50) && Y<(targety+100) && Y>(targety-50) && toggleArray[6]==1) {
                 toggleArray[7]=0;
@@ -285,7 +280,6 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
                 toggleArray[1]=1;
                 target.setBounds(targetx,targety,100,100);
                 add(target);
-                validate();
                 repaint(); }
             if(X<(targetx+100) && X>(targetx-50) && Y<(targety+100) && Y>(targety-50) && toggleArray[7]==1) {
                 toggleArray[1]=0;
@@ -296,7 +290,6 @@ public class JPanelC2 extends JPanel  implements ActionListener, KeyListener {
                 toggleArray[1]=1;
                 target.setBounds(targetx,targety,100,100);
                 add(target);
-                validate();
                 repaint(); }
     }
     }
