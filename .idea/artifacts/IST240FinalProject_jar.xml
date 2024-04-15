@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="IST240FinalProject:jar">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="IST240FinalProject.jar">
+      <element id="module-output" name="IST240FinalProject" />
+    </root>
+  </artifact>
+</component>

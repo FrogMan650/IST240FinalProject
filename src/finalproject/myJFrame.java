@@ -268,6 +268,7 @@ public class myJFrame extends JFrame implements ActionListener {
                 toggleArray[8]=1;
                 mjpMap.york.setEnabled(false);
                 mjpC3.done=1;
+                getContentPane().remove(mjpMap);
                 getContentPane().add(mjpSP);
                 getContentPane().add(mjpC3);
                 mjpC3.requestFocusInWindow();
@@ -513,43 +514,10 @@ public class myJFrame extends JFrame implements ActionListener {
                 gameTimer.stop();
                 getContentPane().remove(mjpMap);
                 getContentPane().add(mjpSB);
-                //opens the xml where the best time and score is stored and parses it
-                //making variables for each, and making them int
-                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-                try {
-                    DocumentBuilder builder = factory.newDocumentBuilder();
-                    Document doc = builder.parse("info.xml");
-                    NodeList bestStats = doc.getElementsByTagName("int");
-                    int xmlBestTime = Integer.parseInt(bestStats.item(0).getTextContent());
-                    int xmlBestScore = Integer.parseInt(bestStats.item(1).getTextContent());
-                    //deciding to add a new score/time
-                    if(xmlBestTime > totalTime) {
-                        overallBestTime = totalTime; }
-                    else { overallBestTime = xmlBestTime; }
-                    if(xmlBestScore < totalScore) { overallBestScore = totalScore; }
-                    else { overallBestScore = xmlBestScore; } 
-                } 
-                catch (ParserConfigurationException ex) {
-                    Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); } 
-                catch (SAXException ex) {
-                        Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); } 
-                catch (IOException ex) {
-                        Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, null, ex); }
-                //try to open a stream to the xml and write to it
-                try {
-                    xe = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("info.xml"))); } 
-                catch (Exception xx) {
-                    xx.printStackTrace(); }
-                //writing the best time and score to the xml
-                try {
-                    xe.writeObject(overallBestTime);
-                    xe.writeObject(overallBestScore); } 
-                catch (Exception xx) {
-                    xx.printStackTrace(); }
-                try {
-                    xe.close(); } 
-                catch (Exception xx) {
-                    xx.printStackTrace(); }
+
+                readXML();
+                writeXML(overallBestTime, overallBestScore);
+
                 //adding all the scoreboard labels
                 toggleArray[18]=1;
                 mjpSB.finalTime.setBounds(650,200,500,100);
@@ -558,18 +526,64 @@ public class myJFrame extends JFrame implements ActionListener {
                 mjpSB.finalScore.setBounds(250,200,500,100);
                 mjpSB.finalScore.setText("Total Score: "+totalScore);
                 mjpSB.add(mjpSB.finalScore);
-                mjpSB.gameOver.setBounds(300,00,600,200);
+                mjpSB.gameOver.setBounds(300,0,600,200);
                 mjpSB.gameOver.setText("GAME OVER");
                 mjpSB.add(mjpSB.gameOver);
                 mjpSB.bestScore.setBounds(250,400,500,100);
-                mjpSB.bestScore.setText("Best Score: "+Integer.toString(overallBestScore));
+                mjpSB.bestScore.setText("Best Score: "+ overallBestScore);
                 mjpSB.add(mjpSB.bestScore);
                 mjpSB.bestTime.setBounds(650,400,500,100);
-                mjpSB.bestTime.setText("Best Time: "+Integer.toString(overallBestTime));
+                mjpSB.bestTime.setText("Best Time: "+ overallBestTime);
                 mjpSB.add(mjpSB.bestTime);
                 repaint();
             }
         }
+    }
+
+    public void readXML() {
+        //opens the xml where the best time and score is stored and parses it
+        //making variables for each, and making them int
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        try {
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.parse("scores.xml");
+            NodeList bestStats = doc.getElementsByTagName("int");
+            int xmlBestTime = Integer.parseInt(bestStats.item(0).getTextContent());
+            int xmlBestScore = Integer.parseInt(bestStats.item(1).getTextContent());
+            //deciding to add a new score/time
+            if(xmlBestTime > totalTime || xmlBestTime == 0) {
+                overallBestTime = totalTime; }
+            else { overallBestTime = xmlBestTime; }
+            if(xmlBestScore < totalScore) { overallBestScore = totalScore; }
+            else { overallBestScore = xmlBestScore; }
+        }
+        catch (ParserConfigurationException ex) {
+            Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, "1", ex); }
+        catch (SAXException ex) {
+            Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, "2", ex); }
+        catch (IOException ex) {
+            Logger.getLogger(myJFrame.class.getName()).log(Level.SEVERE, "3", ex);
+            writeXML(9999, 0);
+            readXML();
+        }
+    }
+
+    public void writeXML(int time, int score) {
+        //try to open a stream to the xml and write to it
+        try {
+            xe = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("scores.xml"))); }
+        catch (Exception xx) {
+            xx.printStackTrace(); }
+        //writing the best time and score to the xml
+        try {
+            xe.writeObject(time);
+            xe.writeObject(score); }
+        catch (Exception xx) {
+            xx.printStackTrace(); }
+        try {
+            xe.close(); }
+        catch (Exception xx) {
+            xx.printStackTrace(); }
     }
 }
 

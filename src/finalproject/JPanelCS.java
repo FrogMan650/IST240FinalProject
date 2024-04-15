@@ -40,7 +40,7 @@ public class JPanelCS extends JPanel {
         Charinfo3.setForeground(Color.WHITE);
         add(Charinfo3);
         Char1 = new JButton();
-        ImageIcon originalSize1 = new ImageIcon("src/pictures/Char1.png");
+        ImageIcon originalSize1 = new ImageIcon(this.getClass().getResource("/pictures/Char1.png"));
         ImageIcon newSize1 = new ImageIcon(((originalSize1).getImage()).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
         Char1.setIcon(newSize1);
         Char1.setBounds(320,200,100,100);
@@ -48,7 +48,7 @@ public class JPanelCS extends JPanel {
         Char1.setFocusable(false);
         add(Char1);
         Char2 = new JButton();
-        ImageIcon originalSize2 = new ImageIcon("src/pictures/Char2.png");
+        ImageIcon originalSize2 = new ImageIcon(this.getClass().getResource("/pictures/Char2.png"));
         ImageIcon newSize2 = new ImageIcon(((originalSize2).getImage()).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
         Char2.setIcon(newSize2);
         Char2.setBounds(580,200,100,100);
@@ -56,7 +56,7 @@ public class JPanelCS extends JPanel {
         Char2.setFocusable(false);
         add(Char2);
         Char3 = new JButton();
-        ImageIcon originalSize3 = new ImageIcon("src/pictures/Char3.png");
+        ImageIcon originalSize3 = new ImageIcon(this.getClass().getResource("/pictures/Char3.png"));
         ImageIcon newSize3 = new ImageIcon(((originalSize3).getImage()).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
         Char3.setIcon(newSize3);
         Char3.setBounds(850,200,100,100);

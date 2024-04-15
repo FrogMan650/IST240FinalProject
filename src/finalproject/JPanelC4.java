@@ -12,7 +12,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 public class JPanelC4 extends JPanel  implements ActionListener, KeyListener {
-    ImageIcon sourceImage1 = new ImageIcon("src/pictures/clouds.jpg");
+    ImageIcon sourceImage1 = new ImageIcon(this.getClass().getResource("/pictures/clouds.jpg"));
     Image clouds = sourceImage1.getImage().getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
     Border whiteLine;
     JButton special,help,help2,Jtest,player,playerNot,obj1,obj2,obj3,obj4,obj5,obj6,obj7,obj8;

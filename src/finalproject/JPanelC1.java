@@ -13,7 +13,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 public class JPanelC1 extends JPanel implements ActionListener, KeyListener {
-    ImageIcon sourceImage1 = new ImageIcon("src/pictures/clouds.jpg");
+    ImageIcon sourceImage1 = new ImageIcon(this.getClass().getResource("/pictures/clouds.jpg"));
     Image clouds = sourceImage1.getImage().getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
     Border whiteLine;
     JButton special,help,help2,player,bouncer,block1,block2,Jtest;
@@ -95,7 +95,7 @@ public class JPanelC1 extends JPanel implements ActionListener, KeyListener {
         Jtest.setBounds(1000,500,100,75);
         Jtest.setFocusable(false);
         Jtest.addActionListener(this);
-        //add(Jtest);
+//        add(Jtest);
     }
     public void paintComponent(Graphics g) {
             g.drawImage(clouds, 0, 0, this); }

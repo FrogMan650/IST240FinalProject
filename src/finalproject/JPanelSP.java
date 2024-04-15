@@ -8,7 +8,7 @@ import javax.swing.border.*;
 import javax.swing.*;
 
 public class JPanelSP extends JPanel {
-    ImageIcon sourceImage1 = new ImageIcon("src/pictures/bar1.jpg");
+    ImageIcon sourceImage1 = new ImageIcon(this.getClass().getResource("/pictures/bar1.jpg"));
     Image clouds = sourceImage1.getImage().getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
     Border whiteLine;
     JLabel Totaltime,Totalscore,overall,current,currentTime,currentScore;

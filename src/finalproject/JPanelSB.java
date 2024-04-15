@@ -20,7 +20,7 @@ public class JPanelSB extends JPanel {
         setBackground(Color.BLACK);
         test.setBounds(new Rectangle(1000,500,200,100));
         test.setFont(font);
-        add(test);
+//        add(test);
         finalTime.setFont(font);
         finalTime.setForeground(Color.BLUE);
         finalScore.setFont(font);

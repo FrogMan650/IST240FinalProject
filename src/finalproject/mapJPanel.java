@@ -6,7 +6,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 public class mapJPanel extends JPanel implements KeyListener{
-    ImageIcon sourceImage1 = new ImageIcon("src/pictures/map.jpg");
+    ImageIcon sourceImage1 = new ImageIcon(this.getClass().getResource("/pictures/map.jpg"));
     Image map = sourceImage1.getImage().getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
     JButton up = new JButton("UP");
     JButton erie = new JButton("Erie");
