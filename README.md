@@ -6,4 +6,4 @@
  Unfortunately I lost the finished project I turned in, so I had to remake about 20-30% of the project, which was more or less the mechanics to two of the minigames and the final score screen.
  Overall I'm extremely happy with how it turned out, and it was easily the best of the class, with the professor being blown away when he tested it.
 
- To try this out, there is a .jar file in the releases. Download this and run it.
+ To try this out, there is a .jar file in the releases. Download this and run it. A Windows environment and Java 18 may be required to run.
